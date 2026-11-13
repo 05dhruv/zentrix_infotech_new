@@ -17,8 +17,8 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Background Layer 2 */}
-      <div className="absolute w-full h-[300px] top-[500px] object-cover z-0 xxs:top-[580px] xxxs:h-[170px] xs:top-[680px] sm:h-[180px] sm:top-[620px] md:h-[220px] md:top-[580px] lg:top-[440px] xl:top-[480px] xl:h-[360px]">
+      {/* Background Layer 2 (3D Wireframe Grid underneath TopProjectsSlider) */}
+      <div className="absolute w-full object-cover z-0 pointer-events-none top-[430px] h-[180px] xxs:top-[440px] xxs:h-[190px] xs:top-[480px] xs:h-[220px] sm:top-[490px] sm:h-[220px] md:top-[500px] md:h-[240px] lg:top-[440px] lg:h-[300px] xl:top-[480px] xl:h-[360px]">
         <img
           src="/HeroBG2.svg"
           alt=""

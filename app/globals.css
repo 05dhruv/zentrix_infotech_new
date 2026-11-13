@@ -69,12 +69,13 @@
 html {
   scroll-behavior: smooth;
   font-family: 'Darker Grotesque', system-ui, sans-serif;
+  overflow-x: clip;
 }
 
 body {
   background-color: rgb(var(--background));
   color: rgb(var(--text-heading));
-  overflow-x: hidden;
+  overflow-x: clip;
   min-height: 100vh;
 }
 
