@@ -45,61 +45,28 @@ export default function ServiceDetailTemplate({ serviceKey, showPreviousWork = t
 
   return (
     <div className="flex flex-col items-center w-full font-headingfont bg-background text-textHeading relative transition-all duration-200">
-      {/* Hero Corner Art */}
-      <div className="absolute top-0 w-full h-[400px] z-0 xxxs:h-[220px] sm:h-[350px] lg:h-[320px] xl:h-[400px]">
-        <img src="/HeroBG1.svg" alt="" role="presentation" className="w-full h-full object-cover" />
-      </div>
+      {/* Ambient Corner Glows (Clean minimal gradient matching blog/reference) */}
       <img
         alt=""
         role="presentation"
-        className="corner-art hero-bg-img-1 absolute top-0 left-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
+        className="corner-art hero-bg-img-1 absolute -top-14 sm:-top-16 left-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
         style={{ '--corner-from-x': '-40px' }}
         src="/HeroLeftCornerBG.svg"
       />
       <img
         alt=""
         role="presentation"
-        className="corner-art hero-bg-img-2 absolute top-0 right-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
+        className="corner-art hero-bg-img-2 absolute -top-14 sm:-top-16 right-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
         style={{ '--corner-from-x': '40px' }}
         src="/HeroRightCornerBG.svg"
       />
 
       <div className="w-full relative z-10 flex flex-col items-center">
-        <div className="w-full flex flex-col items-center mt-0 mb-12 sm:mb-16 z-10">
+        <div className="w-full flex flex-col items-center mt-28 xxxs:mt-24 xxs:mt-24 xs:mt-28 sm:mt-32 md:mt-32 lg:mt-36 xl:mt-40 mb-12 sm:mb-16 z-10">
           <div className="w-full flex flex-col items-center relative">
             
-            {/* Top Back Row */}
-            <div className="blueprint-row spotlight-line w-full flex justify-center relative border-y">
-              <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-6 py-3">
-                <div className="shrink flex">
-                  <Link
-                    className="flex gap-2 items-center text-textDescription hover:text-navTextHover transition-colors duration-200 group font-headingfont"
-                    href="/services"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-arrow-left w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1"
-                      aria-hidden="true"
-                    >
-                      <path d="m12 19-7-7 7-7"></path>
-                      <path d="M19 12H5"></path>
-                    </svg>
-                    <p className="font-bold text-lg sm:text-xl">Services</p>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
             {/* Header Block */}
-            <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
+            <div className="blueprint-row spotlight-line w-full flex justify-center relative border-y">
               <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-8 pt-8 pb-6">
                 <div className="w-full flex flex-col gap-6">
                   

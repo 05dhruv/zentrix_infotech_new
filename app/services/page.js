@@ -182,28 +182,25 @@ export default function ServicesPage() {
 
   return (
     <div className="flex flex-col items-center w-full font-headingfont bg-background text-textHeading relative transition-all duration-200">
-      {/* Hero Corner Art & Backgrounds */}
-      <div className="absolute top-0 w-full h-[400px] z-0 xxxs:h-[220px] sm:h-[350px] lg:h-[320px] xl:h-[400px]">
-        <img src="/HeroBG1.svg" alt="" role="presentation" className="w-full h-full object-cover" />
-      </div>
+      {/* Ambient Corner Glows (Clean minimal gradient matching blog/reference) */}
       <img
         alt=""
         role="presentation"
-        className="corner-art hero-bg-img-1 absolute top-0 left-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
+        className="corner-art hero-bg-img-1 absolute -top-14 sm:-top-16 left-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
         style={{ '--corner-from-x': '-40px' }}
         src="/HeroLeftCornerBG.svg"
       />
       <img
         alt=""
         role="presentation"
-        className="corner-art hero-bg-img-2 absolute top-0 right-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
+        className="corner-art hero-bg-img-2 absolute -top-14 sm:-top-16 right-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
         style={{ '--corner-from-x': '40px' }}
         src="/HeroRightCornerBG.svg"
       />
 
       <div className="w-full relative z-10 flex flex-col items-center">
         {/* Header Section */}
-        <div className="w-full flex flex-col items-center mt-6 mb-12 xxxs:mt-3 xxxs:mb-6 xxs:mt-4 xxs:mb-8 sm:mt-6 sm:mb-10 lg:mt-8 xl:mt-10 xl:mb-14 2xl:mt-12 z-10">
+        <div className="w-full flex flex-col items-center mt-28 xxxs:mt-24 xxs:mt-24 xs:mt-28 sm:mt-32 md:mt-32 lg:mt-36 xl:mt-40 mb-12 xxxs:mb-6 xxs:mb-8 sm:mb-10 xl:mb-14 z-10">
           <div className="w-10/12 max-w-[860px] flex flex-col items-start text-left sm:items-center sm:text-center gap-3.5 sm:gap-4 xxxs:w-11/12 xxxs:gap-2.5">
             <div className="reveal-up" style={{ '--reveal-delay': '0s', '--reveal-y': '25px', '--reveal-duration': '0.65s' }}>
               <div className="badge-glow self-start sm:self-auto flex flex-row justify-center gap-1.5 items-center py-1.5 px-3.5 sm:py-2 sm:px-4 bg-badgeBG rounded-full text-badgeText border border-badgeBorder text-xs sm:text-sm lg:text-[12px] xl:text-sm 2xl:text-[16px] 2xl:px-6 2xl:py-4">

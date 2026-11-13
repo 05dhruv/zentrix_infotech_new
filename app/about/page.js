@@ -21,21 +21,18 @@ export default function AboutPage() {
 
   return (
     <div className="flex flex-col items-center w-full font-headingfont bg-background text-textHeading relative transition-all duration-200">
-      {/* Hero Corner Art & Backgrounds */}
-      <div className="absolute top-0 w-full h-[400px] z-0 xxxs:h-[220px] sm:h-[350px] lg:h-[320px] xl:h-[400px]">
-        <img src="/HeroBG1.svg" alt="" role="presentation" className="w-full h-full object-cover" />
-      </div>
+      {/* Ambient Corner Glows (Clean minimal gradient matching blog/reference) */}
       <img
         alt=""
         role="presentation"
-        className="corner-art hero-bg-img-1 absolute top-0 left-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
+        className="corner-art hero-bg-img-1 absolute -top-14 sm:-top-16 left-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
         style={{ '--corner-from-x': '-40px' }}
         src="/HeroLeftCornerBG.svg"
       />
       <img
         alt=""
         role="presentation"
-        className="corner-art hero-bg-img-2 absolute top-0 right-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
+        className="corner-art hero-bg-img-2 absolute -top-14 sm:-top-16 right-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
         style={{ '--corner-from-x': '40px' }}
         src="/HeroRightCornerBG.svg"
       />
