@@ -26,10 +26,6 @@ export const servicesNavConfig = [
     href: '/services/app-development',
   },
   {
-    name: 'Political Campaign Management',
-    href: '/services/political-campaign-management',
-  },
-  {
     name: 'Video Shoot & Editing',
     href: '/services/video-shoot-editing',
   },
