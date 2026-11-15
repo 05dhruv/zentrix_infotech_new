@@ -265,7 +265,7 @@ export default function BlogDetailTemplate({ post }) {
                   </div>
 
                   {/* Right: Sticky Enquiry Form */}
-                  <aside className="w-full lg:w-[440px] xl:w-[480px] 2xl:w-[500px] shrink-0 lg:sticky lg:top-24 self-start">
+                  <aside className="w-full lg:w-[440px] xl:w-[480px] 2xl:w-[500px] shrink-0 lg:sticky lg:top-28 self-start">
                     <BlogEnquiryForm />
                   </aside>
 

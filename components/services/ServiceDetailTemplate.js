@@ -45,33 +45,17 @@ export default function ServiceDetailTemplate({ serviceKey, showPreviousWork = t
 
   return (
     <div className="flex flex-col items-center w-full font-headingfont bg-background text-textHeading relative transition-all duration-200">
-      {/* Ambient Corner Glows (Clean minimal gradient matching blog/reference) */}
-      <img
-        alt=""
-        role="presentation"
-        className="corner-art hero-bg-img-1 absolute -top-14 sm:-top-16 left-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
-        style={{ '--corner-from-x': '-40px' }}
-        src="/HeroLeftCornerBG.svg"
-      />
-      <img
-        alt=""
-        role="presentation"
-        className="corner-art hero-bg-img-2 absolute -top-14 sm:-top-16 right-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
-        style={{ '--corner-from-x': '40px' }}
-        src="/HeroRightCornerBG.svg"
-      />
-
       <div className="w-full relative z-10 flex flex-col items-center">
-        <div className="w-full flex flex-col items-center mt-28 xxxs:mt-24 xxs:mt-24 xs:mt-28 sm:mt-32 md:mt-32 lg:mt-36 xl:mt-40 mb-12 sm:mb-16 z-10">
+        <div className="w-full flex flex-col items-center mt-0 mb-12 sm:mb-16 z-10">
           <div className="w-full flex flex-col items-center relative">
             
             {/* Header Block */}
             <div className="blueprint-row spotlight-line w-full flex justify-center relative border-y">
-              <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-8 pt-8 pb-6">
-                <div className="w-full flex flex-col gap-6">
+              <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-8 pt-3.5 pb-4 sm:pt-4 sm:pb-4.5">
+                <div className="w-full flex flex-col gap-3 sm:gap-3.5">
                   
                   {/* Top Pill & Action Button */}
-                  <div className="flex flex-wrap items-center justify-between gap-4">
+                  <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex items-center gap-2">
                       {/* Pill Badge displaying Service Name */}
                       <span className="rounded-full border border-border bg-cardBg py-1 px-3.5 text-xs sm:text-sm font-semibold text-textHeading font-bodyfont shadow-sm flex items-center gap-2">
@@ -82,12 +66,12 @@ export default function ServiceDetailTemplate({ serviceKey, showPreviousWork = t
 
                     <Link
                       href={service.ctaHref}
-                      className="h-11 sm:h-12 flex items-center justify-between pl-4 sm:pl-5 pr-2 gap-3 sm:gap-4 rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200 group/live shadow-sm"
+                      className="h-9 sm:h-10 flex items-center justify-between pl-3.5 sm:pl-4 pr-2 gap-2.5 sm:gap-3 rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200 group/live shadow-sm"
                     >
                       <span className="font-semibold text-xs sm:text-sm font-headingfont whitespace-nowrap">
                         {service.ctaText}
                       </span>
-                      <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-navTextHover flex items-center justify-center text-white group-hover/live:bg-white group-hover/live:text-navTextHover transition-all duration-200 flex-shrink-0">
+                      <span className="w-6 h-6 sm:w-6.5 sm:h-6.5 rounded-lg bg-navTextHover flex items-center justify-center text-white group-hover/live:bg-white group-hover/live:text-navTextHover transition-all duration-200 flex-shrink-0">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -109,46 +93,46 @@ export default function ServiceDetailTemplate({ serviceKey, showPreviousWork = t
                   </div>
 
                   {/* Headline Tagline (Bada / Large Heading) */}
-                  <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-[1.08] tracking-tight text-textHeading font-headingfont">
+                  <h1 className="text-3xl sm:text-4xl md:text-[46px] lg:text-[50px] font-bold leading-[1.08] tracking-tight text-textHeading font-headingfont">
                     {service.headline || service.title}
                   </h1>
 
                   {/* Catchy Tagline (Chota / Sub-heading) */}
-                  <p className="font-bodyfont text-base sm:text-xl leading-relaxed text-textDescription max-w-[52rem]">
+                  <p className="font-bodyfont text-sm sm:text-base leading-relaxed text-textDescription max-w-[54rem]">
                     {service.tagline}
                   </p>
 
                   {/* Timeline, Engagement, Deliverables, Outcome */}
-                  <dl className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-5 pt-5 spotlight-line border-t font-bodyfont">
-                    <div className="flex flex-col gap-1 min-w-0">
-                      <dt className="text-[11px] uppercase tracking-wider text-textDescription font-semibold">Timeline</dt>
-                      <dd className="text-sm sm:text-base font-semibold text-textHeading">{service.timeline}</dd>
+                  <dl className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-2.5 pt-2.5 spotlight-line border-t font-bodyfont">
+                    <div className="flex flex-col gap-0.5 min-w-0">
+                      <dt className="text-[10px] sm:text-[11px] uppercase tracking-wider text-textDescription font-semibold">Timeline</dt>
+                      <dd className="text-xs sm:text-[13px] lg:text-sm font-semibold text-textHeading leading-snug">{service.timeline}</dd>
                     </div>
-                    <div className="flex flex-col gap-1 min-w-0">
-                      <dt className="text-[11px] uppercase tracking-wider text-textDescription font-semibold">Engagement</dt>
-                      <dd className="text-sm sm:text-base font-semibold text-textHeading">{service.engagement}</dd>
+                    <div className="flex flex-col gap-0.5 min-w-0">
+                      <dt className="text-[10px] sm:text-[11px] uppercase tracking-wider text-textDescription font-semibold">Engagement</dt>
+                      <dd className="text-xs sm:text-[13px] lg:text-sm font-semibold text-textHeading leading-snug">{service.engagement}</dd>
                     </div>
-                    <div className="flex flex-col gap-1 min-w-0">
-                      <dt className="text-[11px] uppercase tracking-wider text-textDescription font-semibold">Deliverables</dt>
-                      <dd className="text-sm sm:text-base font-semibold text-textHeading">{service.deliverables}</dd>
+                    <div className="flex flex-col gap-0.5 min-w-0">
+                      <dt className="text-[10px] sm:text-[11px] uppercase tracking-wider text-textDescription font-semibold">Deliverables</dt>
+                      <dd className="text-xs sm:text-[13px] lg:text-sm font-semibold text-textHeading leading-snug">{service.deliverables}</dd>
                     </div>
-                    <div className="flex flex-col gap-1 min-w-0">
-                      <dt className="text-[11px] uppercase tracking-wider text-textDescription font-semibold">Outcome</dt>
-                      <dd className="text-sm sm:text-base font-semibold text-navTextHover">{service.outcome}</dd>
+                    <div className="flex flex-col gap-0.5 min-w-0">
+                      <dt className="text-[10px] sm:text-[11px] uppercase tracking-wider text-textDescription font-semibold">Outcome</dt>
+                      <dd className="text-xs sm:text-[13px] lg:text-sm font-semibold text-navTextHover leading-snug">{service.outcome}</dd>
                     </div>
                   </dl>
 
                   {/* Technologies Label & Tags */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 pt-2">
-                    <span className="text-xs uppercase tracking-wider font-bold text-textHeading font-headingfont shrink-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 pt-1">
+                    <span className="text-[11px] sm:text-xs uppercase tracking-wider font-bold text-textHeading font-headingfont shrink-0">
                       Technologies:
                     </span>
-                    <ul className="flex flex-wrap gap-2 list-none p-0 m-0">
+                    <ul className="flex flex-wrap gap-1.5 sm:gap-2 list-none p-0 m-0">
                       {service.tags.map((tag, idx) => (
                         <li
                           key={idx}
-                          className="font-bodyfont text-xs font-medium px-2.5 py-1 rounded-md border border-border bg-cardBg text-textDescription shadow-sm"
-                        >
+                          className="font-bodyfont text-[11px] sm:text-xs font-medium px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md border border-border bg-cardBg text-textDescription shadow-sm"
+>
                           {tag}
                         </li>
                       ))}

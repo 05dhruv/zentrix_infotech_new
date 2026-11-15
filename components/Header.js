@@ -7,7 +7,17 @@ import { DesktopServicesDropdown, MobileServicesAccordion } from './NavServicesD
 export default function Header() {
   const [theme, setTheme] = useState('dark');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 15);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     // Check local storage or document class
@@ -53,9 +63,20 @@ export default function Header() {
     return pathname.startsWith(href);
   };
 
+  const transparentRoutes = ['/', '/services', '/products', '/projects', '/about', '/about-us', '/blog'];
+  const isTransparentNav = transparentRoutes.includes(pathname);
+
   return (
-    <header className="w-10/12 mx-auto flex flex-col justify-between items-center sticky top-10 z-50 transition-all duration-200 xxxs:w-11/12 xxxs:top-5 xxs:w-11/12 xxs:gap-3 xxs:top-6 xs:top-8 xs:w-10/12 sm:w-11/12 sm:top-9 md:w-10/12 2xl:max-w-[1440px]">
-      <div className="navbar w-full flex flex-row justify-between xxxs:bg-navBg/50 xxxs:bg-clip-padding xxxs:backdrop-filter xxxs:backdrop-blur-md xxxs:border xxxs:border-navBorder xxxs:rounded-xl xxxs:p-3 xxs:p-3 sm:p-3 sm:bg-navBg/50 sm:bg-clip-padding sm:backdrop-filter sm:backdrop-blur-md sm:border sm:border-navBorder sm:rounded-xl md:p-3 lg:p-0 lg:bg-transparent lg:border-none lg:backdrop-blur-none lg:[backdrop-filter:none]">
+    <header
+      className={`w-full sticky top-0 z-50 transition-all duration-300 flex flex-col justify-between items-center ${
+        isTransparentNav
+          ? 'bg-transparent border-b border-transparent py-2 sm:py-2.5 xl:py-3'
+          : `bg-white dark:bg-black border-b border-border/20 dark:border-white/10 pt-6 sm:pt-7 lg:pt-8 xl:pt-9 pb-12 sm:pb-14 lg:pb-16 xl:pb-20 ${
+              isScrolled ? 'shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : ''
+            }`
+      }`}
+    >
+      <div className="navbar w-10/12 mx-auto flex flex-row justify-between items-center xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px]">
         {/* Zentrix Logo */}
         <div className="flex justify-center items-center">
           <Link id="nav-logo-container" aria-label="Go to homepage" href="/" className="flex items-center transition-opacity duration-300">
@@ -169,7 +190,7 @@ export default function Header() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="w-full lg:hidden mt-2 p-4 bg-navBg/95 backdrop-blur-xl border border-navBorder rounded-2xl flex flex-col gap-3 shadow-2xl transition-all duration-300 animate-fadeIn">
+        <div className="w-10/12 mx-auto xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 lg:hidden mt-3 p-4 bg-cardBg/95 dark:bg-[#121214]/95 backdrop-blur-2xl border border-border/60 rounded-2xl flex flex-col gap-3 shadow-2xl transition-all duration-300 animate-fadeIn">
           {navItems.map((item) => {
             if (item.name === 'Services') {
               return (

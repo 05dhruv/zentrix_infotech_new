@@ -1,10 +1,10 @@
 'use client';
 import { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 export const servicesNavConfig = [
-  {
+    {
     name: 'Digital Marketing',
     href: '/services/digital-marketing',
     children: [
@@ -13,7 +13,7 @@ export const servicesNavConfig = [
       { name: 'Ads Management', href: '/services/digital-marketing/ads-management' },
     ],
   },
-  {
+    {
     name: 'Software Development',
     href: '/services/software-development',
   },
@@ -22,12 +22,12 @@ export const servicesNavConfig = [
     href: '/services/web-development',
   },
   {
-    name: 'Political Campaign Management',
-    href: '/services/political-campaign-management',
-  },
-  {
     name: 'App Development',
     href: '/services/app-development',
+  },
+  {
+    name: 'Political Campaign Management',
+    href: '/services/political-campaign-management',
   },
   {
     name: 'Video Shoot & Editing',
@@ -47,6 +47,7 @@ export function DesktopServicesDropdown() {
   const submenuRef = useRef(null);
   const closeTimerRef = useRef(null);
   const pathname = usePathname();
+  const router = useRouter();
 
   const isServicesActive = pathname.startsWith('/services');
 
@@ -185,11 +186,13 @@ export function DesktopServicesDropdown() {
         <Link
           ref={triggerRef}
           href="/services"
-          role="button"
           aria-haspopup="menu"
           aria-expanded={isOpen}
           onKeyDown={handleTriggerKeyDown}
-          onClick={() => setIsOpen((prev) => !prev)}
+          onClick={() => {
+            setIsOpen(false);
+            setActiveSubmenu(null);
+          }}
           className={`group flex items-center justify-center gap-1.5 whitespace-nowrap px-3 py-2 rounded-lg transition-all duration-200 hover:cursor-pointer xl:px-5 2xl:px-6 outline-none focus-visible:ring-2 focus-visible:ring-navTextHover ${
             isServicesActive
               ? 'font-bold text-navTextHover bg-navBtnsBG shadow-sm'
@@ -232,6 +235,7 @@ export function DesktopServicesDropdown() {
           }}
         >
           <div className="min-w-[270px] bg-navBg/95 dark:bg-[#0f0e17]/95 light:bg-white/95 backdrop-blur-xl border border-navBorder rounded-xl p-1.5 shadow-[0_12px_40px_rgba(0,0,0,0.25)] flex flex-col gap-0.5">
+
             {servicesNavConfig.map((item, idx) => {
               const hasChildren = Boolean(item.children && item.children.length > 0);
               const isChildActive = hasChildren && item.children.some((c) => pathname === c.href);
@@ -351,24 +355,37 @@ export function MobileServicesAccordion({ onItemClick }) {
   const [servicesExpanded, setServicesExpanded] = useState(false);
   const [digitalMarketingExpanded, setDigitalMarketingExpanded] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   const isServicesActive = pathname.startsWith('/services');
 
   return (
     <div className="w-full flex flex-col">
-      {/* Services Header Toggle */}
+      {/* Services Header Row */}
       <div
-        className={`flex items-center justify-between px-4 py-2.5 rounded-lg font-semibold transition-all cursor-pointer ${
+        className={`flex items-center justify-between px-4 py-2.5 rounded-lg font-semibold transition-all ${
           isServicesActive
             ? 'text-navTextHover bg-navBtnsBG'
             : 'text-textHeading hover:text-navTextHover hover:bg-white/5'
         }`}
-        onClick={() => setServicesExpanded((prev) => !prev)}
-        role="button"
-        aria-expanded={servicesExpanded}
       >
-        <span className="text-base font-bold">Services</span>
-        <div className="flex items-center gap-1.5">
+        <Link
+          href="/services"
+          onClick={() => onItemClick?.()}
+          className="text-base font-bold flex-1"
+        >
+          Services
+        </Link>
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            setServicesExpanded((prev) => !prev);
+          }}
+          className="p-1 hover:bg-white/10 rounded-md transition-colors"
+          aria-label="Toggle services list"
+          aria-expanded={servicesExpanded}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -386,7 +403,7 @@ export function MobileServicesAccordion({ onItemClick }) {
           >
             <path d="m6 9 6 6 6-6" />
           </svg>
-        </div>
+        </button>
       </div>
 
       {/* Accordion Content */}

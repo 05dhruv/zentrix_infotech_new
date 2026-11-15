@@ -8,6 +8,17 @@ export default function LogoIntro() {
   const overlayRef = useRef(null);
 
   useEffect(() => {
+    try {
+      if (typeof window !== 'undefined' && sessionStorage.getItem('zentrix_intro_done')) {
+        setShow(false);
+        const navLogo = document.getElementById('nav-logo-container');
+        if (navLogo) {
+          navLogo.style.opacity = '1';
+        }
+        return;
+      }
+    } catch (e) {}
+
     // 1. Wait for stroke draw & fill animations to complete in center (~1050ms)
     const flyTimer = setTimeout(() => {
       if (!logoRef.current || !backdropRef.current) return;
@@ -55,6 +66,11 @@ export default function LogoIntro() {
     // 3. Unmount overlay completely after flight completes (~2100ms)
     const unmountTimer = setTimeout(() => {
       setShow(false);
+      try {
+        if (typeof window !== 'undefined') {
+          sessionStorage.setItem('zentrix_intro_done', '1');
+        }
+      } catch (e) {}
     }, 2100);
 
     return () => {

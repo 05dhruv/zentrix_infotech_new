@@ -21,18 +21,30 @@ export default function AboutPage() {
 
   return (
     <div className="flex flex-col items-center w-full font-headingfont bg-background text-textHeading relative transition-all duration-200">
-      {/* Ambient Corner Glows (Clean minimal gradient matching blog/reference) */}
+      {/* Background Layer 1 matching Home */}
+      <div
+        className="absolute -top-[88px] w-full h-[520px] z-0 xxxs:h-[320px] sm:h-[480px] lg:h-[480px] xl:h-[540px] pointer-events-none overflow-hidden"
+      >
+        <img
+          src="/HeroBG1.svg"
+          alt=""
+          role="presentation"
+          className="w-full h-full object-cover object-top"
+        />
+      </div>
+
+      {/* Left and Right Corner Graphics */}
       <img
         alt=""
         role="presentation"
-        className="corner-art hero-bg-img-1 absolute -top-14 sm:-top-16 left-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
+        className="corner-art hero-bg-img-1 absolute -top-[88px] left-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
         style={{ '--corner-from-x': '-40px' }}
         src="/HeroLeftCornerBG.svg"
       />
       <img
         alt=""
         role="presentation"
-        className="corner-art hero-bg-img-2 absolute -top-14 sm:-top-16 right-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
+        className="corner-art hero-bg-img-2 absolute -top-[88px] right-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
         style={{ '--corner-from-x': '40px' }}
         src="/HeroRightCornerBG.svg"
       />

@@ -6,14 +6,14 @@ export default function HeroSection() {
     <div className="flex flex-col items-center w-full relative z-10">
       {/* Background Layer 1 */}
       <div
-        className="absolute -top-14 sm:-top-16 w-full h-[450px] z-0 xxxs:h-[260px] sm:h-[400px] lg:h-[380px] xl:h-[450px]"
+        className="absolute -top-[88px] w-full h-[520px] z-0 xxxs:h-[320px] sm:h-[480px] lg:h-[480px] xl:h-[540px]"
         id="home"
       >
         <img
           src="/HeroBG1.svg"
           alt=""
           role="presentation"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
         />
       </div>
 
@@ -32,14 +32,14 @@ export default function HeroSection() {
       <img
         alt=""
         role="presentation"
-        className="corner-art hero-bg-img-1 absolute -top-14 sm:-top-16 left-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
+        className="corner-art hero-bg-img-1 absolute -top-[88px] left-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
         style={{ '--corner-from-x': '-40px' }}
         src="/HeroLeftCornerBG.svg"
       />
       <img
         alt=""
         role="presentation"
-        className="corner-art hero-bg-img-2 absolute -top-14 sm:-top-16 right-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
+        className="corner-art hero-bg-img-2 absolute -top-[88px] right-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
         style={{ '--corner-from-x': '40px' }}
         src="/HeroRightCornerBG.svg"
       />

@@ -1,10 +1,12 @@
 'use client';
-import { notFound } from 'next/navigation';
+import { notFound, useParams } from 'next/navigation';
 import BlogDetailTemplate from '@/components/blog/BlogDetailTemplate';
 import { blogsData } from '@/lib/blogsData';
 
 export default function BlogPostPage({ params }) {
-  const post = blogsData[params.slug];
+  const routeParams = useParams();
+  const slug = routeParams?.slug || params?.slug;
+  const post = blogsData[slug];
   if (!post) {
     notFound();
   }

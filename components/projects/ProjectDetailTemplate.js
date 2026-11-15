@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ALL_PROJECTS } from '@/lib/projectsData';
+import ProjectCard from '@/components/projects/ProjectCard';
 
 export default function ProjectDetailTemplate({ project }) {
   const [activeSection, setActiveSection] = useState(
@@ -27,7 +28,7 @@ export default function ProjectDetailTemplate({ project }) {
 
   if (!project) return null;
 
-  const otherProjects = ALL_PROJECTS.filter((p) => p.slug !== project.slug).slice(0, 4);
+  const otherProjects = ALL_PROJECTS.filter((p) => p.slug !== project.slug).slice(0, 3);
 
   return (
     <div className="flex flex-col items-center w-full font-headingfont bg-background text-textHeading relative transition-all duration-200">
@@ -102,6 +103,12 @@ export default function ProjectDetailTemplate({ project }) {
                     {project.title}
                   </h1>
 
+                  {project.headline && project.headline !== project.title && (
+                    <p className="font-headingfont text-lg sm:text-2xl font-medium text-navTextHover leading-snug">
+                      {project.headline}
+                    </p>
+                  )}
+
                   <p className="font-bodyfont text-base sm:text-xl leading-relaxed text-textDescription max-w-[52rem]">
                     {project.intro || project.description}
                   </p>
@@ -140,15 +147,15 @@ export default function ProjectDetailTemplate({ project }) {
               </div>
             </div>
 
-            {/* Featured Image Banner */}
-            {project.cover && (
+            {/* Featured Image Banner - Homepage First View / Hero */}
+            {(project.heroImage || project.cover) && (
               <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
                 <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x p-3 sm:p-6">
-                  <div className="border border-border bg-[#0a0a0a] w-full aspect-[16/9] max-h-[560px] rounded-xl sm:rounded-2xl p-2 sm:p-3 overflow-hidden relative shadow-sm flex items-center justify-center">
+                  <div className="border border-border bg-[#0a0a0a] w-full aspect-[16/9] max-h-[640px] rounded-xl sm:rounded-2xl overflow-hidden relative shadow-lg flex items-center justify-center">
                     <img 
-                      alt={`${project.title} — Portfolio project by Zentrix Infotech`} 
-                      className="object-contain w-full h-full max-h-full" 
-                      src={project.cover} 
+                      alt={`${project.title} — Homepage Hero view`} 
+                      className="object-cover object-top w-full h-full" 
+                      src={project.heroImage || `/images/projects/${project.slug}-hero.webp`} 
                     />
                   </div>
                 </div>
@@ -233,76 +240,32 @@ export default function ProjectDetailTemplate({ project }) {
 
             {/* More Projects Section */}
             <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
-              <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-6 py-4">
+              <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-6 py-4 flex items-center justify-between">
                 <p className="text-2xl sm:text-3xl font-bold tracking-tight text-textHeading font-headingfont">
                   More Projects
                 </p>
+                <Link
+                  href="/projects"
+                  className="text-xs sm:text-sm font-semibold text-navTextHover hover:underline flex items-center gap-1 group font-headingfont"
+                >
+                  <span>View All Projects</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-0.5">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </Link>
               </div>
             </div>
 
-            {/* Desktop 4-grid for More Projects */}
-            <div className="hidden sm:flex flex-col w-full">
-              <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
-                <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x p-0">
-                  <div className="grid grid-cols-2 lg:grid-cols-4">
-                    {otherProjects.map((item, idx) => (
-                      <div key={item.slug} className={`h-full spotlight-line border-r ${idx === 3 ? 'lg:border-r-0' : ''}`}>
-                        <div className="PostCard group relative list-none h-full bg-cardBg border border-border rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-300 flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none hover:border-navTextHover">
-                          <Link className="relative z-10 flex flex-col gap-3.5 h-full p-3 sm:p-5 lg:p-6 text-textHeading group justify-between" href={`/projects/${item.slug}`}>
-                            <div className="border border-border bg-cardBg w-full aspect-[2/1] rounded-xl sm:rounded-2xl p-1 sm:p-1.5 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(131,86,251,0.18)]">
-                              <div className="w-full h-full rounded-lg sm:rounded-xl overflow-hidden relative bg-cardBg">
-                                {item.cover && (
-                                  <img 
-                                    alt={item.title} 
-                                    loading="lazy" 
-                                    className="object-cover w-full h-full" 
-                                    src={item.cover} 
-                                  />
-                                )}
-                              </div>
-                            </div>
-                            <div className="flex flex-col gap-2 flex-1 justify-between px-1 sm:px-0 pt-0.5 sm:pt-0">
-                              <div className="flex flex-col gap-1">
-                                <small className="font-bodyfont text-xs sm:text-sm text-textDescription font-medium">{item.year || '2025'}</small>
-                                <h3 className="font-headingfont text-lg sm:text-xl font-bold leading-snug tracking-tight text-textHeading line-clamp-2">
-                                  {item.title}
-                                </h3>
-                                <p className="font-bodyfont text-textDescription text-xs sm:text-sm leading-relaxed line-clamp-3">
-                                  {item.description}
-                                </p>
-                              </div>
-                              <div className="pt-2 flex items-center justify-between font-bodyfont">
-                                <span className="text-xs font-semibold px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full border border-border text-textDescription bg-cardBg transition-all shadow-sm">
-                                  {item.category}
-                                </span>
-                                <span className="text-xs text-navTextHover font-semibold whitespace-nowrap flex-shrink-0">
-                                  {item.year || '2025'}
-                                </span>
-                              </div>
-                            </div>
-                          </Link>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+            {/* More Projects Grid using standard ProjectCard */}
+            <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
+              <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-6 py-6 sm:py-8 lg:py-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+                  {otherProjects.map((item) => (
+                    <ProjectCard key={item.slug} project={item} />
+                  ))}
                 </div>
               </div>
-            </div>
-
-            {/* Mobile View for More Projects */}
-            <div className="flex sm:hidden flex-col w-full">
-              {otherProjects.map((item) => (
-                <div key={item.slug} className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
-                  <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x p-0">
-                    <div className="PostCard group relative list-none h-full bg-cardBg border border-border rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-300 flex flex-col p-4">
-                      <Link href={`/projects/${item.slug}`} className="flex flex-col gap-3">
-                        <h3 className="font-headingfont text-lg font-bold text-textHeading">{item.title}</h3>
-                        <p className="font-bodyfont text-xs text-textDescription">{item.description}</p>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
 
           </div>

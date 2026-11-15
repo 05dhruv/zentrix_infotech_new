@@ -22,16 +22,6 @@ const services = [
       'Ongoing support & updates',
     ],
   },
-  {
-    title: 'UI/UX\nDesign',
-    badgeParam: 'ui-ux-design',
-    features: [
-      'User research & wireframing',
-      'High-fidelity prototypes',
-      'Design system creation',
-      'Usability testing',
-    ],
-  },
 ];
 
 export default function ServicesSection() {

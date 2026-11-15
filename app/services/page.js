@@ -23,16 +23,7 @@ const servicesList = [
       'Ongoing support & updates',
     ],
   },
-  {
-    slug: 'ui-ux-design',
-    title: 'UI/UX\nDesign',
-    features: [
-      'User research & wireframing',
-      'High-fidelity prototypes',
-      'Design system creation',
-      'Usability testing',
-    ],
-  },
+
   {
     slug: 'software-development',
     title: 'Software\nDevelopment',
@@ -54,16 +45,6 @@ const servicesList = [
     ],
   },
   {
-    slug: 'political-campaign-management',
-    title: 'Political\nCampaign',
-    features: [
-      'Constituency demographic profiling',
-      'Booth worker mobile applications',
-      '24/7 Digital narrative war room',
-      'Targeted voter mobilization',
-    ],
-  },
-  {
     slug: 'video-shoot-editing',
     title: 'Video Shoot\n& Editing',
     features: [
@@ -71,16 +52,6 @@ const servicesList = [
       'Studio lighting & audio capture',
       'High-retention social reels',
       'Cinema color & sound mastering',
-    ],
-  },
-  {
-    slug: 'branding',
-    title: 'Branding',
-    features: [
-      'Logo & identity design',
-      'Typography & colour systems',
-      'Written brand guidelines',
-      'Files for web, print & signage',
     ],
   },
 ];
@@ -182,18 +153,30 @@ export default function ServicesPage() {
 
   return (
     <div className="flex flex-col items-center w-full font-headingfont bg-background text-textHeading relative transition-all duration-200">
-      {/* Ambient Corner Glows (Clean minimal gradient matching blog/reference) */}
+      {/* Background Layer 1 matching Home */}
+      <div
+        className="absolute -top-[88px] w-full h-[520px] z-0 xxxs:h-[320px] sm:h-[480px] lg:h-[480px] xl:h-[540px] pointer-events-none overflow-hidden"
+      >
+        <img
+          src="/HeroBG1.svg"
+          alt=""
+          role="presentation"
+          className="w-full h-full object-cover object-top"
+        />
+      </div>
+
+      {/* Left and Right Corner Graphics */}
       <img
         alt=""
         role="presentation"
-        className="corner-art hero-bg-img-1 absolute -top-14 sm:-top-16 left-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
+        className="corner-art hero-bg-img-1 absolute -top-[88px] left-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
         style={{ '--corner-from-x': '-40px' }}
         src="/HeroLeftCornerBG.svg"
       />
       <img
         alt=""
         role="presentation"
-        className="corner-art hero-bg-img-2 absolute -top-14 sm:-top-16 right-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
+        className="corner-art hero-bg-img-2 absolute -top-[88px] right-0 z-0 pointer-events-none h-auto w-[140px] xxs:w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[400px] min-[1440px]:w-[480px] 2xl:w-[540px]"
         style={{ '--corner-from-x': '40px' }}
         src="/HeroRightCornerBG.svg"
       />
@@ -238,14 +221,9 @@ export default function ServicesPage() {
             {servicesList.slice(0, 3).map(renderServiceCard)}
           </div>
 
-          {/* Second Row of 3 Services: Software Dev, Digital Marketing, Political Campaign */}
+          {/* Second Row of 3 Services: Digital Marketing, Video Shoot & Editing, MVP Sprint */}
           <div className="scroll-reveal sl-service-cards w-10/12 grid grid-cols-1 lg:grid-cols-3 gap-5 xxxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 xl:gap-5 xl:max-w-[1200px] 2xl:max-w-[1440px] 2xl:gap-8" style={{ '--reveal-delay': '0.1s', '--reveal-y': '30px', '--reveal-duration': '0.7s' }}>
             {servicesList.slice(3, 6).map(renderServiceCard)}
-          </div>
-
-          {/* Third Row of Services (Video Shoot & Editing, Branding, MVP) */}
-          <div className="scroll-reveal sl-service-cards w-10/12 grid grid-cols-1 lg:grid-cols-3 gap-5 xxxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 xl:gap-5 xl:max-w-[1200px] 2xl:max-w-[1440px] 2xl:gap-8" style={{ '--reveal-delay': '0.2s', '--reveal-y': '30px', '--reveal-duration': '0.7s' }}>
-            {servicesList.slice(6, 8).map(renderServiceCard)}
 
             {/* MVP Service Card */}
             <div className="border border-border bg-cardBg group relative h-full rounded-[16px] xs:rounded-[18px] sm:rounded-3xl p-2.5 xs:p-3 sm:p-4 xl:p-5 flex flex-col overflow-hidden transition-all duration-300 gap-3 xs:gap-4 sm:gap-6 sm:flex-row lg:flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none hover:border-[#8356FB]/60">
@@ -302,7 +280,6 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
 
