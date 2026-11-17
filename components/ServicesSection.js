@@ -22,6 +22,16 @@ const services = [
       'Ongoing support & updates',
     ],
   },
+  {
+    title: 'Digital\nMarketing',
+    badgeParam: 'digital-marketing',
+    features: [
+      'Full-funnel acquisition strategy',
+      'SEO & Google Search dominance',
+      'High-ROAS Meta & Google Ads',
+      'Social Media Optimization (SMO)',
+    ],
+  },
 ];
 
 export default function ServicesSection() {
