@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { servicesData } from '@/lib/servicesData';
 
-export default function ServiceDetailTemplate({ serviceKey, showPreviousWork = true, showImpact = true }) {
+export default function ServiceDetailTemplate({ serviceKey, showPreviousWork = true, showImpact = true, dashboard = null, marketingContent = null }) {
   const service = servicesData[serviceKey];
   const [activeSection, setActiveSection] = useState('overview');
 
@@ -44,7 +44,7 @@ export default function ServiceDetailTemplate({ serviceKey, showPreviousWork = t
   if (!service) return null;
 
   return (
-    <div className="flex flex-col items-center w-full font-headingfont bg-background text-textHeading relative transition-all duration-200">
+    <div className="service-detail-page flex flex-col items-center w-full font-headingfont bg-background text-textHeading relative transition-all duration-200">
       <div className="w-full relative z-10 flex flex-col items-center">
         <div className="w-full flex flex-col items-center mt-0 mb-12 sm:mb-16 z-10">
           <div className="w-full flex flex-col items-center relative">
@@ -469,6 +469,9 @@ export default function ServiceDetailTemplate({ serviceKey, showPreviousWork = t
                         <div id="overview" className="scroll-mt-36">
                           {service.sections.intro}
                         </div>
+
+                        {dashboard && <section id="marketing-dashboard" className="mt-12 scroll-mt-36">{dashboard}</section>}
+                        {marketingContent}
 
                         {/* The Challenge Section */}
                         <h2

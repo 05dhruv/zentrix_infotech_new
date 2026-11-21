@@ -68,10 +68,10 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full sticky top-0 z-50 transition-all duration-300 flex flex-col justify-between items-center ${
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 flex flex-col justify-between items-center ${
         isTransparentNav
-          ? 'bg-transparent border-b border-transparent py-2 sm:py-2.5 xl:py-3'
-          : `bg-white dark:bg-black border-b border-border/20 dark:border-white/10 pt-6 sm:pt-7 lg:pt-8 xl:pt-9 pb-12 sm:pb-14 lg:pb-16 xl:pb-20 ${
+          ? 'bg-white/95 dark:bg-black/95 border-b border-border/20 dark:border-white/10 py-2 sm:py-2.5 xl:py-3 backdrop-blur-md'
+          : `bg-white dark:bg-black border-b border-border/20 dark:border-white/10 py-3 sm:py-4 lg:py-5 ${
               isScrolled ? 'shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : ''
             }`
       }`}

@@ -79,6 +79,33 @@ body {
   min-height: 100vh;
 }
 
+/* The fixed header is kept outside normal flow, so reserve its height for page
+   content. This keeps the first section's existing gap and prevents it from
+   scrolling underneath the navigation. */
+#main-content {
+  padding-top: 64px;
+}
+
+@media (min-width: 1024px) {
+  #main-content {
+    padding-top: 124px;
+  }
+}
+
+/* Keep service-detail content visually continuous instead of splitting every
+   block with blueprint divider lines. Card borders remain untouched. */
+.service-detail-page .blueprint-row {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+
+@media (min-width: 640px) {
+  .service-detail-page .blueprint-row > .spotlight-line {
+    border-left: 0 !important;
+    border-right: 0 !important;
+  }
+}
+
 /* Techwara-style Exact Intro Animation */
 @keyframes introDraw {
   to {
