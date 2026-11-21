@@ -248,6 +248,8 @@ main a, main p, main li, main dd, main td, main th { overflow-wrap: break-word; 
 @media (max-width: 639px) {
   html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   body { min-width: 320px; }
+  /* The contact header overlays its hero on mobile, so clear the rounded navbar. */
+  .contact-head-badge { margin-top: 2rem; }
   #main-content { overflow-x: clip; }
   .custom-cursor { display: none !important; }
   input, select, textarea { font-size: 16px !important; }
