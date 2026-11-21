@@ -16,7 +16,6 @@ const NAV_SERVICE_SLUGS = [
   'app-development',
   'video-shoot-editing',
 ];
-
 export default function ServiceExploreCarousel({ currentService }) {
   const services = useMemo(
     () => NAV_SERVICE_SLUGS.map((slug) => servicesData[slug]).filter((service) => service && service.slug !== currentService),
