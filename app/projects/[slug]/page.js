@@ -24,6 +24,8 @@ const aliasMap = {
   'kd-goi': 'kdgoi',
   kdgoi: 'kdgoi',
   buyzaar: 'buyzaar',
+  'jyoti-hydraulic': 'jyoti-hydraulic',
+  jyoti: 'jyoti-hydraulic',
   vasterior: 'vasterior',
   herbsfox: 'herbsfox',
   'alluring-glimpses': 'alluring-glimpses',

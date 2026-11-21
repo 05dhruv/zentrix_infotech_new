@@ -4,38 +4,38 @@ import SubpageFAQ from '@/components/SubpageFAQ';
 
 const productsList = [
   {
-    id: 'rentlyf',
-    title: 'Rentlyf',
-    badge: 'PropTech SaaS',
-    image: '/images/rentlyf.png',
-    description: 'A mobile-first SaaS platform built for professional landlords and property managers to automate rent collection, tenant screening, lease agreements, and maintenance requests from one centralized dashboard.',
+    id: 'givelyf',
+    title: 'Givelyf',
+    badge: 'Healthcare SaaS',
+    image: '/images/givelyf-product.svg',
+    description: 'A secure blood donor management system that helps healthcare teams organize donor records, blood requests, donation drives, and availability from one dashboard.',
     features: [
-      'Automated Rent Collection',
-      'Digital Lease Agreements',
-      'Maintenance Dispatch Tracker',
-      'Tenant KYC & Screening',
-      'Multi-Property Dashboard'
+      'Donor Registration',
+      'Blood Request Tracking',
+      'Availability Management',
+      'Donation Campaigns',
+      'Admin Dashboard'
     ],
-    liveUrl: 'https://www.rentlyf.app',
-    buttonText: 'Open Rentlyf',
+    liveUrl: 'https://givelyf.zentrixinfotech.in/',
+    buttonText: 'Open Givelyf',
     isExternal: true
   },
   {
-    id: 'grocery-platform',
-    title: 'Grocery & Supermarket Platform',
-    badge: 'Turnkey Commerce & Quick-Delivery',
-    image: '/images/grocery.png',
-    description: 'An end-to-end multi-store digital commerce solution empowering local grocery chains, supermarkets, and dark stores to manage catalog inventory, POS billing, delivery routes, and customer loyalty.',
+    id: 'zflow',
+    title: 'ZFlow',
+    badge: 'Workflow Platform',
+    image: '/images/zflow-product.svg',
+    description: 'A focused workflow platform designed to help teams move work from idea to done with clear projects, tasks, and progress tracking.',
     features: [
-      'Real-Time Inventory Sync',
-      'Integrated POS & Online Orders',
-      'Delivery Route Optimization',
-      'Automated WhatsApp Updates',
-      'Multi-Branch Architecture'
+      'Project Workspaces',
+      'Task Management',
+      'Team Collaboration',
+      'Progress Tracking',
+      'Workflow Visibility'
     ],
-    liveUrl: '/projects/buyzaar',
-    buttonText: 'View Case Study',
-    isExternal: false
+    liveUrl: 'https://zflow.in/',
+    buttonText: 'Visit ZFlow',
+    isExternal: true
   },
 ];
 
@@ -99,7 +99,7 @@ export default function ProductsPage() {
 
       <div className="w-full relative z-10 flex flex-col items-center">
         {/* Header Hero Section */}
-        <div className="w-full flex flex-col items-center mt-36 mb-16 xxxs:mt-20 xxxs:mb-8 xxs:mt-24 xxs:mb-10 sm:mt-28 sm:mb-12 lg:mt-32 xl:mt-36 xl:mb-16 2xl:mt-40 z-10">
+        <div className="w-full flex flex-col items-center mt-8 xxxs:mt-5 xxs:mt-6 xs:mt-7 sm:mt-8 md:mt-9 lg:mt-10 xl:mt-12 2xl:mt-14 mb-10 xxxs:mb-6 xxs:mb-7 sm:mb-8 xl:mb-12 z-10">
           <div className="w-10/12 max-w-[860px] flex flex-col items-start text-left sm:items-center sm:text-center gap-3.5 sm:gap-4 xxxs:w-11/12 xxxs:gap-2.5">
             <div className="reveal-up" style={{ '--reveal-delay': '0s', '--reveal-y': '25px', '--reveal-duration': '0.65s' }}>
               <div className="badge-glow self-start sm:self-auto flex flex-row justify-center gap-1.5 items-center py-1.5 px-3.5 sm:py-2 sm:px-4 bg-badgeBG rounded-full text-badgeText border border-badgeBorder text-xs sm:text-sm lg:text-[12px] xl:text-sm 2xl:text-[16px] 2xl:px-6 2xl:py-4">

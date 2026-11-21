@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CustomCursor from '@/components/CustomCursor';
 import LogoIntro from '@/components/LogoIntro';
+import ConsultationPopup from '@/components/ConsultationPopup';
 
 export const metadata = {
   metadataBase: new URL('https://www.zentrixinfotech.com'),
@@ -23,6 +24,12 @@ export const metadata = {
     locale: 'en_US',
     type: 'website',
   },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({ children }) {
@@ -51,6 +58,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-screen bg-background font-headingfont text-textHeading antialiased relative">
         <LogoIntro />
+        <ConsultationPopup />
         <CustomCursor />
         <Header />
         <main id="main-content">{children}</main>

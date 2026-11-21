@@ -63,12 +63,17 @@ export default function Header() {
     return pathname.startsWith(href);
   };
 
-  const transparentRoutes = ['/', '/services', '/products', '/projects', '/about', '/about-us', '/blog'];
+  // Keep all top-level landing pages visually consistent with the home header.
+  // Contact was intentionally included here so it does not fall back to the solid, expanded inner-page bar.
+  const transparentRoutes = ['/', '/services', '/products', '/projects', '/about', '/about-us', '/blog', '/contact'];
   const isTransparentNav = transparentRoutes.includes(pathname);
+  // These pages start with a visual hero, so the navigation should sit on top
+  // of that artwork rather than reserve a separate dark strip above it.
+  const isOverlayNav = ['/about', '/about-us', '/contact'].includes(pathname);
 
   return (
     <header
-      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 flex flex-col justify-between items-center ${
+      className={`w-full ${isOverlayNav ? 'absolute' : 'sticky'} top-0 z-50 transition-all duration-300 flex flex-col justify-between items-center ${
         isTransparentNav
           ? 'bg-white/95 dark:bg-black/95 border-b border-border/20 dark:border-white/10 py-2 sm:py-2.5 xl:py-3 backdrop-blur-md'
           : `bg-white dark:bg-black border-b border-border/20 dark:border-white/10 py-3 sm:py-4 lg:py-5 ${
