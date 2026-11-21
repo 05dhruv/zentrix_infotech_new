@@ -11,7 +11,7 @@ export default function WebDevelopmentProjectsCarousel() {
   const autoplay = useRef(
     Autoplay({ delay: 3600, stopOnInteraction: false, stopOnMouseEnter: false })
   );
-  const [emblaRef, emblaApi] = useEmblaCarousel(
+  const [emblaRef] = useEmblaCarousel(
     { loop: true, align: 'start', dragFree: true, skipSnaps: false },
     [autoplay.current]
   );

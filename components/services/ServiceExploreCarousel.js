@@ -22,7 +22,7 @@ export default function ServiceExploreCarousel({ currentService }) {
     [currentService]
   );
   const autoplay = useRef(Autoplay({ delay: 3800, stopOnInteraction: false, stopOnMouseEnter: false }));
-  const [emblaRef, emblaApi] = useEmblaCarousel(
+  const [emblaRef] = useEmblaCarousel(
     { loop: true, align: 'start', dragFree: true, skipSnaps: false },
     [autoplay.current]
   );
