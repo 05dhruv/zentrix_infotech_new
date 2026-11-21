@@ -216,17 +216,24 @@ body {
 .light .consultation-select-menu button:hover, .light .consultation-select-menu button.is-selected { color: #fff; background: linear-gradient(90deg, #8356fb, #6f44e9); }
 
 @media (max-width: 560px) {
-  .consultation-overlay { align-items: start; padding: 10px; }
-  .consultation-popup { margin: 0; padding: 22px 15px 20px; border-radius: 22px 22px 38px 22px; }
-  .consultation-topbar { margin-bottom: 25px; padding-bottom: 13px; }
-  .consultation-logo { width: 132px; }
+  .consultation-overlay { align-items: center; padding: 8px; }
+  .consultation-popup { width: min(500px, 100%); max-height: calc(100dvh - 16px); margin: 0; padding: 16px 14px 13px; border-radius: 22px 22px 32px 22px; }
+  .consultation-close { top: 13px; right: 14px; width: 29px; height: 29px; font-size: 25px; line-height: 25px; }
+  .consultation-topbar { margin: 0 38px 14px 0; padding-bottom: 10px; }
+  .consultation-logo { width: 114px; height: 28px; }
   .consultation-step { font-size: 9px; letter-spacing: .06em; }
-  .consultation-heading { margin-bottom: 18px; }
-  .consultation-heading h2 { font-size: clamp(27px, 8.4vw, 36px); white-space: normal; }
-  .consultation-heading p { font-size: 14px; line-height: 1.4; }
-  .consultation-grid { grid-template-columns: 1fr; gap: 14px; }
-  .consultation-form { gap: 14px; padding: 15px; }
-  .consultation-field input, .consultation-field select, .consultation-field textarea { padding: 12px 13px; }
+  .consultation-heading { margin-bottom: 12px; }
+  .consultation-kicker { margin-bottom: 7px; font-size: 9px; }
+  .consultation-heading h2 { font-size: clamp(25px, 7.6vw, 32px); line-height: 1.08; white-space: normal; }
+  .consultation-heading p { margin-top: 8px; font-size: 12px; line-height: 1.35; }
+  .consultation-form { gap: 8px; padding: 11px; border-radius: 15px; }
+  .consultation-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .consultation-field { gap: 4px; font-size: 11px; }
+  .consultation-field input, .consultation-field select, .consultation-field textarea { padding: 8px 10px; border-radius: 8px; font-size: 14px; }
+  .consultation-select-trigger { min-height: 36px; padding: 8px 10px; border-radius: 8px; font-size: 14px; }
+  .consultation-field textarea { min-height: 54px; resize: none; }
+  .consultation-submit { min-height: 38px; padding: 9px 16px; font-size: 13px; }
+  .consultation-safe { margin-top: 8px; font-size: 10px; }
 }
 
 /* Site-wide responsive foundation */

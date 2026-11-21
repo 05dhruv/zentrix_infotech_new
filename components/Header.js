@@ -63,8 +63,8 @@ export default function Header() {
     return pathname.startsWith(href);
   };
 
-  // Keep all top-level landing pages visually consistent with the home header.
-  // Contact was intentionally included here so it does not fall back to the solid, expanded inner-page bar.
+  // Only the primary landing pages use a transparent header. Nested/detail
+  // routes intentionally keep the regular solid navigation treatment.
   const transparentRoutes = ['/', '/services', '/products', '/projects', '/about', '/about-us', '/blog', '/contact'];
   const isTransparentNav = transparentRoutes.includes(pathname);
   // These pages start with a visual hero, so the navigation should sit on top
@@ -75,13 +75,19 @@ export default function Header() {
     <header
       className={`w-full ${isOverlayNav ? 'absolute' : 'sticky'} top-0 z-50 transition-all duration-300 flex flex-col justify-between items-center ${
         isTransparentNav
-          ? 'bg-white/95 dark:bg-black/95 border-b border-border/20 dark:border-white/10 py-2 sm:py-2.5 xl:py-3 backdrop-blur-md'
+          ? 'bg-transparent border-b border-transparent py-2 sm:py-2.5 xl:py-3'
           : `bg-white dark:bg-black border-b border-border/20 dark:border-white/10 py-3 sm:py-4 lg:py-5 ${
               isScrolled ? 'shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : ''
             }`
       }`}
     >
-      <div className="navbar w-10/12 mx-auto flex flex-row justify-between items-center xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px]">
+      <div
+        className={`navbar w-10/12 mx-auto flex flex-row justify-between items-center xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] ${
+          isTransparentNav
+            ? 'rounded-2xl border border-black/10 bg-white/55 px-3 py-3 backdrop-blur-md dark:border-white/15 dark:bg-black/55 lg:border-transparent lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none'
+            : ''
+        }`}
+      >
         {/* Zentrix Logo */}
         <div className="flex justify-center items-center">
           <Link id="nav-logo-container" aria-label="Go to homepage" href="/" className="flex items-center transition-opacity duration-300">
