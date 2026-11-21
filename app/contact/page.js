@@ -13,6 +13,15 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col items-center w-full font-headingfont bg-background text-textHeading relative transition-all duration-200">
+      {/* Continue the hero grid behind the overlaid navigation; no separate black header band. */}
+      <div className="absolute top-0 left-0 w-full h-[520px] z-0 pointer-events-none overflow-hidden">
+        <img
+          src="/HeroBG1.svg"
+          alt=""
+          role="presentation"
+          className="w-full h-full object-cover object-top"
+        />
+      </div>
       {/* Ambient Corner Glows (Clean minimal gradient matching blog/reference) */}
       <img
         alt=""

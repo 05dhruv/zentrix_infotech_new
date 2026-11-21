@@ -18,7 +18,7 @@ export default function Footer() {
               <circle cx="12" cy="12" r="10"></circle>
               <path d="M14.83 14.83a4 4 0 1 1 0-5.66"></path>
             </svg>
-            <p className="leading-none text-[#ADADAD] sm:text-white/90">2026. All Rights Reserved By ZENTRIX INFOTECH</p>
+            <p className="leading-none text-[#ADADAD] sm:text-white/90">2026. All Rights Reserved By ZENTRIX INFOTECH LLP</p>
           </div>
 
           {/* Navigation Columns (Right Side) */}
@@ -82,56 +82,6 @@ export default function Footer() {
           </nav>
         </div>
 
-        {/* Large Brand Signature: Zentrix Logo Icon + Name */}
-        <div className="w-full flex justify-center items-center pt-8 sm:pt-10 md:pt-14 pb-4 sm:pb-6 overflow-hidden select-none">
-          <div className="flex items-center justify-center gap-3 sm:gap-5 md:gap-7 lg:gap-8 max-w-full">
-            {/* Authentic Zentrix Brand Emblem Icon (Exact 4-tile geometry) */}
-            <svg
-              viewBox="0 0 58 64"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-[10vw] sm:h-[11vw] md:h-[12vw] lg:h-[12.5vw] w-auto shrink-0 drop-shadow-[0_0_35px_rgba(0,255,178,0.45)]"
-              aria-hidden="true"
-            >
-              <defs>
-                <linearGradient id="footer-zentrix-grad" x1="15%" y1="0%" x2="85%" y2="100%">
-                  <stop offset="0%" stopColor="#00FFB2" />
-                  <stop offset="50%" stopColor="#00E5FF" />
-                  <stop offset="100%" stopColor="#00D2FF" />
-                </linearGradient>
-              </defs>
-
-              {/* Tile 1: Top-Left Main Parallelogram */}
-              <path
-                d="M17.5 2.5 H35.5 C36.9 2.5 38.0 3.7 37.6 5.1 L31.2 27.5 C30.9 28.6 29.9 29.4 28.7 29.4 H10.7 C9.3 29.4 8.2 28.2 8.6 26.8 L15.0 4.4 C15.4 3.3 16.4 2.5 17.5 2.5 Z"
-                fill="url(#footer-zentrix-grad)"
-              />
-
-              {/* Tile 2: Top-Right Small Parallelogram */}
-              <path
-                d="M44.0 15.5 H54.5 C55.7 15.5 56.6 16.6 56.2 17.8 L53.0 27.5 C52.7 28.5 51.8 29.2 50.8 29.2 H40.3 C39.1 29.2 38.2 28.1 38.6 26.9 L41.8 17.2 C42.1 16.2 43.0 15.5 44.0 15.5 Z"
-                fill="url(#footer-zentrix-grad)"
-              />
-
-              {/* Tile 3: Bottom-Left Small Parallelogram */}
-              <path
-                d="M7.0 34.8 H17.5 C18.7 34.8 19.6 35.9 19.2 37.1 L16.0 46.8 C15.7 47.8 14.8 48.5 13.8 48.5 H3.3 C2.1 48.5 1.2 47.4 1.6 46.2 L4.8 36.5 C5.1 35.5 6.0 34.8 7.0 34.8 Z"
-                fill="url(#footer-zentrix-grad)"
-              />
-
-              {/* Tile 4: Bottom-Right Main Parallelogram */}
-              <path
-                d="M26.5 34.5 H44.5 C45.9 34.5 47.0 35.7 46.6 37.1 L40.2 59.5 C39.9 60.6 38.9 61.4 37.7 61.4 H19.7 C18.3 61.4 17.2 60.2 17.6 58.8 L24.0 36.4 C24.4 35.3 25.4 34.5 26.5 34.5 Z"
-                fill="url(#footer-zentrix-grad)"
-              />
-            </svg>
-
-            {/* Clean, Pure White ZENTRIX Typography */}
-            <span className="font-clashdisplay font-extrabold tracking-tight text-white uppercase text-[12vw] sm:text-[13vw] md:text-[14vw] lg:text-[14.5vw] leading-[0.85] select-none pointer-events-none drop-shadow-[0_10px_40px_rgba(0,255,178,0.2)]">
-              ZENTRIX
-            </span>
-          </div>
-        </div>
       </div>
     </footer>
   );

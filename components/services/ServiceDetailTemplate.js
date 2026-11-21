@@ -2,6 +2,13 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { servicesData } from '@/lib/servicesData';
+import PreviousWorkCarousel from './PreviousWorkCarousel';
+import WebDevelopmentProjectsCarousel from './WebDevelopmentProjectsCarousel';
+import AdsManagementShowcase from './AdsManagementShowcase';
+import InstagramProfileShowcase from './InstagramProfileShowcase';
+import SoftwareDevelopmentShowcase from './SoftwareDevelopmentShowcase';
+import AppDevelopmentShowcase from './AppDevelopmentShowcase';
+import ServiceExploreCarousel from './ServiceExploreCarousel';
 
 export default function ServiceDetailTemplate({ serviceKey, showPreviousWork = true, showImpact = true }) {
   const service = servicesData[serviceKey];
@@ -158,121 +165,32 @@ export default function ServiceDetailTemplate({ serviceKey, showPreviousWork = t
               </div>
             </div>
 
+            {/* App Development: custom process section directly below the hero */}
+            {isAppDev && (
+              <div id="previous-work" className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
+                <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-8 py-8 sm:py-12">
+                  <AppDevelopmentShowcase />
+                </div>
+              </div>
+            )}
+
             {/* Section 1: Our Previous Work */}
             {displayPreviousWork && (
               <div id="previous-work" className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
-              <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-8 py-8 sm:py-12">
-                <div className="w-full flex flex-col gap-6">
-                  <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-                    <div>
-                      <span className="text-xs uppercase tracking-wider font-bold text-navTextHover font-headingfont">
-                        Portfolio Showcase
-                      </span>
-                      <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-textHeading font-headingfont mt-1">
-                        Our Previous Work
-                      </h2>
-                    </div>
-                    <Link
-                      href="/projects"
-                      className="text-xs sm:text-sm font-semibold text-navTextHover hover:underline flex items-center gap-1 group/link"
-                    >
-                      <span>View All Projects</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5">
-                        <path d="M5 12h14"></path>
-                        <path d="m12 5 7 7-7 7"></path>
-                      </svg>
-                    </Link>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-2">
-                    {/* Project Card 1 */}
-                    <div className="border border-border bg-cardBg rounded-2xl p-4 flex flex-col justify-between hover:border-[#8356FB]/60 transition-all duration-300 shadow-sm group">
-                      <div className="w-full aspect-[16/10] rounded-xl overflow-hidden relative mb-4 bg-black/20">
-                        <img
-                          src="/images/SliderImg_1.webp"
-                          alt="Sawasheri Direct Platform"
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute top-2.5 left-2.5 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-semibold text-white">
-                          E-Commerce &amp; Mobile App
-                        </div>
-                      </div>
-                      <div className="flex flex-col gap-2 flex-1">
-                        <h3 className="text-lg font-bold text-textHeading group-hover:text-navTextHover transition-colors">
-                          Sawasheri Direct
-                        </h3>
-                        <p className="text-xs sm:text-sm text-textDescription line-clamp-2 font-bodyfont leading-relaxed">
-                          Turnkey grocery e-commerce platform, native iOS and Android apps, real-time inventory synchronization, and automated slot delivery routing.
-                        </p>
-                      </div>
-                      <div className="pt-4 mt-auto flex items-center justify-between border-t border-border/60 text-xs font-semibold">
-                        <span className="text-textDescription font-bodyfont">Delivered in 4 Weeks</span>
-                        <Link href="/projects" className="text-navTextHover hover:underline flex items-center gap-1">
-                          Case Study →
-                        </Link>
-                      </div>
-                    </div>
-
-                    {/* Project Card 2 */}
-                    <div className="border border-border bg-cardBg rounded-2xl p-4 flex flex-col justify-between hover:border-[#8356FB]/60 transition-all duration-300 shadow-sm group">
-                      <div className="w-full aspect-[16/10] rounded-xl overflow-hidden relative mb-4 bg-black/20">
-                        <img
-                          src="/images/SliderImg_2.webp"
-                          alt="Lineage Corporation Experience"
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute top-2.5 left-2.5 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-semibold text-white">
-                          Enterprise Platform
-                        </div>
-                      </div>
-                      <div className="flex flex-col gap-2 flex-1">
-                        <h3 className="text-lg font-bold text-textHeading group-hover:text-navTextHover transition-colors">
-                          Lineage Corporation
-                        </h3>
-                        <p className="text-xs sm:text-sm text-textDescription line-clamp-2 font-bodyfont leading-relaxed">
-                          Global luxury web platform with headless CMS workflows, interactive 3D product previews, and high-converting B2B inquiry funnels.
-                        </p>
-                      </div>
-                      <div className="pt-4 mt-auto flex items-center justify-between border-t border-border/60 text-xs font-semibold">
-                        <span className="text-textDescription font-bodyfont">Delivered in 3 Weeks</span>
-                        <Link href="/projects" className="text-navTextHover hover:underline flex items-center gap-1">
-                          Case Study →
-                        </Link>
-                      </div>
-                    </div>
-
-                    {/* Project Card 3 */}
-                    <div className="border border-border bg-cardBg rounded-2xl p-4 flex flex-col justify-between hover:border-[#8356FB]/60 transition-all duration-300 shadow-sm group">
-                      <div className="w-full aspect-[16/10] rounded-xl overflow-hidden relative mb-4 bg-black/20">
-                        <img
-                          src="/images/SliderImg_3.webp"
-                          alt="Blue Island Works Platform"
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute top-2.5 left-2.5 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-semibold text-white">
-                          Production &amp; Brand
-                        </div>
-                      </div>
-                      <div className="flex flex-col gap-2 flex-1">
-                        <h3 className="text-lg font-bold text-textHeading group-hover:text-navTextHover transition-colors">
-                          Blue Island Works
-                        </h3>
-                        <p className="text-xs sm:text-sm text-textDescription line-clamp-2 font-bodyfont leading-relaxed">
-                          Cinema-grade promotional video production, dynamic motion graphics, and corporate platform built to scale international market reach.
-                        </p>
-                      </div>
-                      <div className="pt-4 mt-auto flex items-center justify-between border-t border-border/60 text-xs font-semibold">
-                        <span className="text-textDescription font-bodyfont">Delivered in 2.5 Weeks</span>
-                        <Link href="/projects" className="text-navTextHover hover:underline flex items-center gap-1">
-                          Case Study →
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+                <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-8 py-8 sm:py-12">
+                  {service.slug === 'web-development' ? (
+                    <WebDevelopmentProjectsCarousel />
+                  ) : service.slug === 'software-development' ? (
+                    <SoftwareDevelopmentShowcase />
+                  ) : service.slug === 'digital-marketing/ads-management' ? (
+                    <AdsManagementShowcase />
+                  ) : service.slug === 'digital-marketing/social-media-optimization' ? (
+                    <InstagramProfileShowcase />
+                  ) : (
+                    <PreviousWorkCarousel projects={service.previousWork} />
+                  )}
                 </div>
               </div>
-            </div>
-
             )}
             {displayImpact && (
               <div id="impact-of-work" className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
@@ -551,15 +469,14 @@ export default function ServiceDetailTemplate({ serviceKey, showPreviousWork = t
 
             {/* Explore Other Services Header */}
             <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
-              <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-6 py-4">
-                <p className="text-2xl sm:text-3xl font-bold tracking-tight text-textHeading font-headingfont">
-                  Explore Other Services
-                </p>
+              <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-8 py-8 sm:py-12">
+                <ServiceExploreCarousel currentService={service.slug} />
               </div>
             </div>
+            <div className="hidden" aria-hidden="true" />
 
             {/* Mobile Other Services */}
-            <div className="flex sm:hidden flex-col w-full">
+            <div className="hidden">
               {otherServices.slice(0, 4).map((item) => (
                 <div key={item.slug} className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
                   <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x p-0">
@@ -608,7 +525,7 @@ export default function ServiceDetailTemplate({ serviceKey, showPreviousWork = t
             </div>
 
             {/* Desktop Other Services Grid */}
-            <div className="hidden sm:flex flex-col w-full">
+            <div className="hidden">
               <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
                 <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x p-0">
                   <div className="grid grid-cols-2 lg:grid-cols-4">

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Givelyf blood donor management dashboard</title>
+  <desc id="desc">A blue and violet medical dashboard with blood donor records and donation metrics.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071b35"/><stop offset=".52" stop-color="#0c456c"/><stop offset="1" stop-color="#6046b4"/></linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#eaf4ff"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="22" stdDeviation="20" flood-color="#031222" flood-opacity=".34"/></filter>
+  </defs>
+  <rect width="1200" height="750" rx="38" fill="url(#bg)"/>
+  <g opacity=".18" fill="none" stroke="#92dcff" stroke-width="2"><circle cx="106" cy="118" r="74"/><circle cx="1060" cy="640" r="118"/><path d="M0 604C230 508 238 716 468 620S817 458 1200 569M0 124C250 245 361 16 604 135s266 144 596-20"/></g>
+  <g fill="#b7f1ff" opacity=".5"><circle cx="169" cy="207" r="6"/><circle cx="230" cy="141" r="4"/><circle cx="1040" cy="145" r="7"/><circle cx="1102" cy="184" r="4"/></g>
+  <g filter="url(#shadow)" transform="translate(163 93)">
+    <rect width="874" height="566" rx="28" fill="url(#card)"/>
+    <path d="M0 28Q0 0 28 0h818q28 0 28 28v74H0z" fill="#f8fbff"/>
+    <rect x="40" y="31" width="44" height="44" rx="13" fill="#e7eeff"/>
+    <path d="M62 39c-8 12-12 18-12 25a12 12 0 0 0 24 0c0-7-4-13-12-25Z" fill="#e84461"/>
+    <text x="101" y="58" font-family="Arial, sans-serif" font-weight="700" font-size="25" fill="#16243d">Givelyf</text>
+    <text x="101" y="79" font-family="Arial, sans-serif" font-size="13" fill="#71809a">Blood Donor Management System</text>
+    <rect x="668" y="37" width="163" height="36" rx="18" fill="#f0edff"/><circle cx="691" cy="55" r="6" fill="#7059d5"/><text x="706" y="60" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#5f49c1">Admin dashboard</text>
+    <rect x="35" y="127" width="191" height="400" rx="18" fill="#132640"/>
+    <text x="61" y="171" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#b9c9dd">OVERVIEW</text>
+    <g font-family="Arial, sans-serif" font-size="16"><rect x="51" y="192" width="159" height="43" rx="10" fill="#6857d8"/><text x="78" y="219" fill="white">Dashboard</text><text x="78" y="270" fill="#cdd8e8">Donors</text><text x="78" y="320" fill="#cdd8e8">Blood requests</text><text x="78" y="370" fill="#cdd8e8">Campaigns</text><text x="78" y="420" fill="#cdd8e8">Reports</text></g>
+    <text x="266" y="162" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#16243d">Good morning, Admin</text><text x="266" y="188" font-family="Arial, sans-serif" font-size="14" fill="#7a8799">Here is today’s donation overview.</text>
+    <g transform="translate(266 220)" font-family="Arial, sans-serif"><g><rect width="171" height="111" rx="16" fill="#edf3ff"/><text x="18" y="33" font-size="13" fill="#71809a">Total donors</text><text x="18" y="77" font-size="34" font-weight="700" fill="#385ac9">2,486</text><circle cx="139" cy="56" r="20" fill="#d9e6ff"/></g><g transform="translate(189)"><rect width="171" height="111" rx="16" fill="#fff1f2"/><text x="18" y="33" font-size="13" fill="#9a7180">Available today</text><text x="18" y="77" font-size="34" font-weight="700" fill="#dc425b">184</text><path d="M138 36c-13 19-19 28-19 39a19 19 0 0 0 38 0c0-11-6-20-19-39Z" fill="#f39aaa"/></g><g transform="translate(378)"><rect width="171" height="111" rx="16" fill="#eefaf6"/><text x="18" y="33" font-size="13" fill="#668b81">Successful donations</text><text x="18" y="77" font-size="34" font-weight="700" fill="#22a77a">96</text><circle cx="139" cy="56" r="20" fill="#d6f3e8"/></g></g>
+    <rect x="266" y="359" width="566" height="151" rx="16" fill="#f8faff" stroke="#e3eaf4"/>
+    <text x="288" y="392" font-family="Arial, sans-serif" font-weight="700" font-size="17" fill="#24344d">Recent donor registrations</text>
+    <g font-family="Arial, sans-serif" font-size="14"><text x="290" y="430" fill="#34445c">Aarav Sharma</text><text x="500" y="430" fill="#71809a">O Positive</text><text x="694" y="430" fill="#25a97d">Verified</text><path d="M287 450h519M290 482h152" stroke="#dfe8f2"/><text x="500" y="482" fill="#71809a">B Positive</text><text x="694" y="482" fill="#25a97d">Available</text></g>
+  </g>
+  <g transform="translate(84 564)"><rect width="232" height="54" rx="27" fill="#ffffff" fill-opacity=".94"/><circle cx="115" cy="591" r="8" fill="#e84461"/><text x="134" y="597" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#35425b">Healthcare SaaS</text></g>
+</svg>
