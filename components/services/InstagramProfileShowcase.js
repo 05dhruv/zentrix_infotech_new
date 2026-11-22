@@ -5,31 +5,17 @@ import { useEffect, useState } from 'react';
 // Replace these demo values with the three client Instagram profiles when available.
 const INSTAGRAM_PROFILES = [
   {
-    handle: '@jigyasa_hospital',
-    name: 'Jigyasa Hospital',
-    niche: 'Healthcare · Moradabad',
-    initials: 'JH',
-    accent: 'from-cyan-500 via-teal-500 to-emerald-400',
-    growth: '+68%',
-    growthLabel: 'Profile visits',
-    followers: '6,934',
-    postCount: '372',
-    reach: '86K',
-    href: 'https://www.instagram.com/jigyasa_hospital?knvt=MzVrN3htcGFqOGto',
-    posts: ['#92c6c6', '#4d8b8c', '#e1efef', '#5c7f80', '#bddbd6', '#266b72'],
-  },
-  {
-    handle: '@dr.karishmasingh',
-    name: 'Dr. Karishma Singh',
-    niche: 'Obstetrician & Gynaecologist',
-    initials: 'KS',
+    handle: '@oracleeyehospital',
+    name: 'Oracle Eye Hospital',
+    niche: 'Optometrist · Moradabad',
+    initials: 'OEH',
     accent: 'from-rose-500 via-pink-500 to-orange-400',
-    growth: '+54%',
+    growth: '+109%',
     growthLabel: 'Organic reach',
-    followers: '2,945',
-    postCount: '148',
-    reach: '49K',
-    href: 'https://www.instagram.com/dr.karishmasingh?cnvx=ODBxaDM0bHZzcDhz',
+    followers: '28.2K',
+    postCount: '795',
+    reach: '249K',
+    href: 'https://www.instagram.com/oracleeyehospital?fqnt=MXA0NXNtMTIwdmxvNg==',
     posts: ['#f6b51e', '#f7e3b9', '#f19a72', '#db5e7c', '#f4c6c0', '#89aecd'],
   },
   {
@@ -45,6 +31,20 @@ const INSTAGRAM_PROFILES = [
     reach: '374K',
     href: 'https://www.instagram.com/dr.priyanka.gynae?cnvx=MWlsbnExM3gzY3FsNQ==',
     posts: ['#f2b329', '#ea6897', '#9e5bd3', '#e9f1f0', '#d72d3e', '#c8a176'],
+  },
+    {
+    handle: '@jigyasa_hospital',
+    name: 'Jigyasa Hospital',
+    niche: 'Healthcare · Moradabad',
+    initials: 'JH',
+    accent: 'from-cyan-500 via-teal-500 to-emerald-400',
+    growth: '+68%',
+    growthLabel: 'Profile visits',
+    followers: '6,934',
+    postCount: '372',
+    reach: '86K',
+    href: 'https://www.instagram.com/jigyasa_hospital?knvt=MzVrN3htcGFqOGto',
+    posts: ['#92c6c6', '#4d8b8c', '#e1efef', '#5c7f80', '#bddbd6', '#266b72'],
   },
 ];
 
@@ -84,7 +84,7 @@ export default function InstagramProfileShowcase() {
                 <InstagramIcon className={`h-4 w-4 shrink-0 transition-colors ${active === index ? 'text-navTextHover' : 'text-textDescription group-hover:text-navTextHover'}`} />
               </a>
             ))}
-            <p className="px-3 pb-2 pt-1 text-[11px] leading-relaxed text-textDescription font-bodyfont">Tap a profile to preview the campaign identity. Demo details shown here can be replaced with your live accounts.</p>
+            <p className="px-3 pb-2 pt-1 text-[11px] leading-relaxed text-textDescription font-bodyfont">Tap a profile to preview the campaign identity.</p>
           </div>
 
           <div className="relative min-h-[410px] overflow-hidden rounded-2xl border border-border bg-[#0d0b14] p-4 sm:p-6">
