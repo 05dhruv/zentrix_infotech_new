@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'How do I get started?',
-    a: 'Getting started is easy! Simply reach out through our contact form or email us at connect@zentrixinfotech.com. We\'ll schedule a free consultation to discuss your project requirements, timeline, and provide a detailed proposal.',
+    a: 'Getting started is easy! Simply reach out through our contact form or email us at info@zentrixinfotech.com We\'ll schedule a free consultation to discuss your project requirements, timeline, and provide a detailed proposal.',
   },
 ];
 
