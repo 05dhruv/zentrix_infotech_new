@@ -51,7 +51,6 @@ export default function Footer() {
             <h2 className="text-xs font-bold tracking-[.16em] text-[#6d43dc] uppercase dark:text-[#b49cff]">Get in touch</h2>
             <div className="mt-5 space-y-3 font-bodyfont text-sm">
               <a className={`${linkClass} block break-all`} href="mailto:info@zentrixinfotech.com">info@zentrixinfotech.com</a>
-              <a className={`${linkClass} block break-all`} href="mailto:zentrixinfotech.connect@gmail.com">zentrixinfotech.connect@gmail.com</a>
               <a className={`${linkClass} block`} href="tel:+917248800839">+91 72488 00839</a>
             </div>
           </section>
