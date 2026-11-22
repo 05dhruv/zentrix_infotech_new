@@ -278,15 +278,15 @@ export default function BlogDetailTemplate({ post }) {
               <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x p-0">
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between w-full">
                   <a 
-                    href="https://twitter.com/zentrixinfotechconnect" 
+                    href="https://www.linkedin.com/company/zentrixinfotech" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="px-4 sm:px-6 py-3 flex gap-2.5 items-center text-textDescription hover:text-navTextHover transition-colors text-sm font-semibold font-bodyfont"
+                    className="px-4 sm:px-6 py-3 flex gap-2.5 items-center text-textDescription hover:text-[#0A66C2] transition-colors text-sm font-semibold font-bodyfont"
                   >
-                    <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" className="w-4 h-4 text-navTextHover" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path>
+                    <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 448 512" className="w-4 h-4 text-[#0A66C2]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path>
                     </svg>
-                    <span>Follow @zentrixinfotechconnect</span>
+                    <span>Follow @zentrixinfotech</span>
                   </a>
                   <div className="flex items-center self-end sm:self-auto spotlight-line border-t sm:border-t-0 sm:border-l">
                     {/* Share on X */}

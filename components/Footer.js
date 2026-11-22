@@ -5,15 +5,27 @@ import { servicesNavConfig } from './NavServicesDropdown';
 
 const linkClass = 'font-bodyfont text-sm leading-6 text-textDescription transition-colors hover:text-[#8356fb] dark:hover:text-[#bca8ff]';
 const socialLinks = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/zentrixinfotech', symbol: 'in' },
-  { label: 'Instagram', href: 'https://www.instagram.com/zentrixinfotech/', symbol: 'ig' },
-  { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61572870601261', symbol: 'f' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/zentrixinfotech', icon: 'linkedin' },
+  { label: 'Instagram', href: 'https://www.instagram.com/zentrixinfotech/', icon: 'instagram' },
+  { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61572870601261', icon: 'facebook' },
 ];
+
+function ContactIcon({ type }) {
+  if (type === 'map') return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className="h-5 w-5" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.7" /></svg>;
+  if (type === 'email') return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className="h-5 w-5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg>;
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className="h-5 w-5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.99.37 1.96.72 2.9a2 2 0 0 1-.45 2.11L8.11 10a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.94.35 1.91.59 2.9.72A2 2 0 0 1 22 16.92Z" /></svg>;
+}
+
+function SocialIcon({ type }) {
+  const common = { viewBox: '0 0 512 512', fill: 'currentColor', className: 'h-4 w-4', 'aria-hidden': true };
+  if (type === 'linkedin') return <svg {...common} viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3C448 46.5 433.6 32 416 32zM135.4 416H69V202.2h66.5V416zM102.2 173c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.2-17.2 38.5-38.5 38.5zM384.3 416h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" /></svg>;
+  if (type === 'instagram') return <svg {...common} viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.7 51.1-114.7 114.7s51.1 114.7 114.7 114.7 114.7-51.1 114.7-114.7S287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8s-26.8-12-26.8-26.8 12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1S3.3 127.5 1.5 163.4c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-102.7-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 102.7 9 132.1s2.7 102.7-9 132.1z" /></svg>;
+  return <svg {...common}><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 123.8 90.7 226.4 209.3 245V327.7h-63V256h63v-54.6c0-62.2 37-96.5 93.7-96.5 27.1 0 55.5 4.8 55.5 4.8v61h-31.3c-30.8 0-40.4 19.1-40.4 38.7V256h68.8l-11 71.7h-57.8V501C421.3 482.4 512 379.8 512 256z" /></svg>;
+}
 
 function ContactLink({ href, children, type = 'phone' }) {
   const style = type === 'phone' ? 'bg-emerald-500/10 text-emerald-500' : type === 'email' ? 'bg-[#8356fb]/10 text-[#8356fb]' : 'bg-[#8356fb]/10 text-[#8356fb]';
-  const label = type === 'phone' ? 'Call' : type === 'email' ? 'Mail' : 'Map';
-  return <a href={href} className="flex items-center gap-3 transition hover:text-textHeading"><span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl text-[10px] font-bold ${style}`}>{label}</span><span>{children}</span></a>;
+  return <a href={href} className="flex items-center gap-3 transition hover:text-textHeading"><span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${style}`}><ContactIcon type={type} /></span><span>{children}</span></a>;
 }
 
 export default function Footer() {
@@ -47,10 +59,8 @@ export default function Footer() {
             <nav aria-label="Company links" className="mt-5 flex flex-col gap-3"><Link className={linkClass} href="/about">About us</Link><Link className={linkClass} href="/projects">Our work</Link><Link className={linkClass} href="/products">Products</Link><Link className={linkClass} href="/blog">Blog</Link><Link className={linkClass} href="/contact">Contact us</Link></nav>
           </section>
           <section>
-            <h2 className="font-headingfont text-lg font-bold">Legal</h2>
-            <nav aria-label="Legal links" className="mt-5 flex flex-col gap-3"><Link className={linkClass} href="/privacy-policy">Privacy policy</Link><Link className={linkClass} href="/terms">Terms of service</Link><Link className={linkClass} href="/cancellation-and-refund">Refund policy</Link><Link className={linkClass} href="/cookie-policy">Cookie policy</Link></nav>
             <h3 className="mt-9 font-headingfont text-base font-bold">Follow us</h3>
-            <div className="mt-4 flex gap-3">{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={`Follow Zentrix Infotech on ${social.label}`} className="grid h-10 w-10 place-items-center rounded-xl border border-border bg-cardBg text-xs font-bold text-textDescription transition hover:-translate-y-1 hover:border-[#8356fb]/50 hover:text-[#8356fb]">{social.symbol}</a>)}</div>
+            <div className="mt-4 flex gap-3">{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={`Follow Zentrix Infotech on ${social.label}`} className="grid h-10 w-10 place-items-center rounded-xl border border-border bg-cardBg text-textDescription transition hover:-translate-y-1 hover:border-[#8356fb]/50 hover:text-[#8356fb]"><SocialIcon type={social.icon} /></a>)}</div>
           </section>
         </div>
         <div className="flex flex-col gap-3 pt-6 font-bodyfont text-xs text-textDescription sm:flex-row sm:items-center sm:justify-between"><p>&copy; {new Date().getFullYear()} Zentrix Infotech LLP. All rights reserved.</p><p>Built with clarity, creativity, and care.</p></div>
