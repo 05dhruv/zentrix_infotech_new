@@ -92,7 +92,7 @@ export default function TestimonialsSection() {
   return (
     <section
       aria-labelledby="testimonials-heading"
-      className="sl-testimonial relative w-full flex flex-col justify-between items-center gap-16 my-20 xxxs:my-14 xxs:my-16 xs:my-20 sm:my-14 xl:gap-20 xl:my-24 2xl:my-28 2xl:gap-24"
+      className="sl-testimonial relative w-full flex flex-col justify-between items-center gap-12 my-14 xxxs:my-10 xxs:my-12 xs:my-14 sm:my-10 xl:gap-16 xl:my-16 2xl:my-20 2xl:gap-20"
     >
       {/* Header Block */}
       <div className="scroll-reveal w-full flex flex-col items-center">

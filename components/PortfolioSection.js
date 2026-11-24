@@ -11,7 +11,7 @@ export default function PortfolioSection() {
     <section
       id="projects"
       aria-labelledby="projects-heading"
-      className="sl-portfolio w-full flex flex-col justify-between items-center gap-12 sm:gap-16 mb-20 pt-28 xxxs:pt-20 xxxs:gap-12 xxxs:mb-14 xxs:pt-24 xs:mb-20 xs:pt-28 sm:mb-14 sm:pt-24 lg:pt-28 xl:gap-20 xl:mb-24 xl:pt-36 2xl:gap-24"
+      className="sl-portfolio w-full flex flex-col justify-between items-center gap-10 sm:gap-12 mb-14 pt-20 xxxs:pt-16 xxxs:gap-10 xxxs:mb-10 xxs:pt-20 xs:mb-14 xs:pt-24 sm:mb-10 sm:pt-20 lg:pt-20 xl:gap-16 xl:mb-16 xl:pt-24 2xl:gap-20"
     >
       {/* Header Block */}
       <div className="scroll-reveal w-full flex flex-col items-center">

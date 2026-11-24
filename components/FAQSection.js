@@ -103,7 +103,7 @@ export default function FAQSection() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="sl-faq w-full flex flex-col justify-between items-center gap-12 py-20 xxxs:py-14 xxxs:gap-8 xxs:py-16 xs:py-20 sm:py-16 lg:py-20 xl:py-24 2xl:py-28"
+      className="sl-faq w-full flex flex-col justify-between items-center gap-10 py-14 xxxs:py-10 xxxs:gap-8 xxs:py-12 xs:py-14 sm:py-12 lg:py-14 xl:py-16 2xl:py-20"
     >
       {/* Header Block */}
       <div className="w-full max-w-[780px] flex flex-col justify-between items-start text-left sm:items-center sm:text-center gap-3.5 sm:gap-4 xxxs:w-11/12 xs:w-10/12 sm:w-9/12 md:w-8/12 lg:w-7/12">

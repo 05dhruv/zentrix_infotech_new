@@ -6,7 +6,7 @@ export default function ProductsSection() {
     <section
       id="products"
       aria-labelledby="products-heading"
-      className="sl-product w-full flex flex-col justify-between items-center pt-28 gap-16 mb-20 xxxs:pt-20 xxxs:gap-14 xxxs:mb-14 xxs:pt-24 xxs:gap-16 xxs:mb-16 xs:mb-20 xs:pt-28 sm:mb-14 sm:pt-24 lg:gap-16 lg:pt-28 xl:pt-36 xl:gap-20 xl:mb-24 2xl:gap-24"
+      className="sl-product w-full flex flex-col justify-between items-center pt-20 gap-12 mb-14 xxxs:pt-16 xxxs:gap-10 xxxs:mb-10 xxs:pt-20 xxs:gap-12 xxs:mb-12 xs:mb-14 xs:pt-24 sm:mb-10 sm:pt-20 lg:gap-12 lg:pt-20 xl:pt-24 xl:gap-16 xl:mb-16 2xl:gap-20"
     >
       {/* Header Block */}
       <div className="scroll-reveal w-full flex flex-col items-center">

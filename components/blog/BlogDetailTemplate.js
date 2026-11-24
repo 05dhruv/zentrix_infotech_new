@@ -42,7 +42,7 @@ export default function BlogDetailTemplate({ post }) {
       />
 
       <div className="w-full relative z-10 flex flex-col items-center">
-        <div className="w-full flex flex-col items-center mt-28 xxxs:mt-24 xxs:mt-24 xs:mt-28 sm:mt-32 md:mt-32 lg:mt-36 xl:mt-40 mb-20 z-10">
+        <div className="w-full flex flex-col items-center mb-20 z-10">
           <div className="w-full flex flex-col items-center relative">
             
             {/* Top Breadcrumb Row */}

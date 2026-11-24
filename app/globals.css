@@ -23,7 +23,7 @@
   --nav-btn-text: 255, 255, 255;
   --nav-btns-bg: 13, 13, 13;
   --text-heading: 255, 255, 255;
-  --text-description: 173, 173, 173;
+  --text-description: 190, 190, 190;
   --border: 53, 53, 53;
   --badge-bg: 20, 20, 20;
   --badge-text: 250, 250, 250;
@@ -50,7 +50,7 @@
   --nav-btn-text: 255, 255, 255;
   --nav-btns-bg: 225, 225, 225;
   --text-heading: 33, 33, 33;
-  --text-description: 73, 73, 73;
+  --text-description: 60, 60, 60;
   --border: 200, 200, 200;
   --badge-bg: 255, 255, 255;
   --badge-text: 13, 13, 13;
@@ -79,6 +79,37 @@ body {
   min-height: 100vh;
 }
 
+/* Shared colour contract for every route and reusable card. Components use the
+   theme tokens above, so the palette stays readable whenever the mode changes. */
+html, body, input, textarea, select, button {
+  transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+}
+
+::selection { color: #fff; background: #8356fb; }
+
+input, textarea, select {
+  color: rgb(var(--text-heading));
+  border-color: rgb(var(--border));
+  background-color: rgb(var(--card-bg));
+}
+
+input::placeholder, textarea::placeholder { color: rgb(var(--text-description) / .7); }
+
+input:focus, textarea:focus, select:focus {
+  outline-color: #8356fb;
+}
+
+/* Long-form content on blog, project and service detail pages otherwise falls
+   back to the browser's static prose colours. */
+.prose { color: rgb(var(--text-description)); }
+.prose :where(h1, h2, h3, h4, strong, summary):not(:where([class~='not-prose'] *)) { color: rgb(var(--text-heading)); }
+.prose :where(a):not(:where([class~='not-prose'] *)) { color: #8356fb; }
+.prose :where(code):not(:where([class~='not-prose'] *)) { color: rgb(var(--text-heading)); background: rgb(var(--card-bg)); }
+.prose :where(blockquote):not(:where([class~='not-prose'] *)) { color: rgb(var(--text-description)); border-color: #8356fb; }
+
+.light .bg-cardBg, .light .PostCard { color: rgb(var(--text-heading)); }
+.dark .bg-cardBg, .dark .PostCard { color: rgb(var(--text-heading)); }
+
 /* Consultation popup shown whenever the site is opened or refreshed. */
 .consultation-overlay {
   position: fixed;
@@ -96,9 +127,9 @@ body {
 
 .consultation-popup {
   position: relative;
-  width: min(570px, 100%);
+  width: min(540px, 100%);
   margin: auto;
-  padding: 30px 30px 31px;
+  padding: 26px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, .1);
   border-radius: 30px 30px 54px 30px;
@@ -126,7 +157,7 @@ body {
   cursor: pointer;
 }
 .consultation-close:hover { color: #fff; border-color: rgba(0,214,255,.55); background: rgba(0,214,255,.1); }
-.consultation-topbar { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center; margin: 0 47px 30px 0; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,.08); }
+.consultation-topbar { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center; margin: 0 43px 24px 0; padding-bottom: 13px; border-bottom: 1px solid rgba(255,255,255,.08); }
 .consultation-logo { display: block; width: 148px; height: 36px; object-fit: contain; object-position: left center; }
 .consultation-logo-light { display: none; }
 .light .consultation-popup { color: #252035; background: linear-gradient(135deg, #fbfaff, #f3f0fa); border-color: rgba(78, 55, 130, .14); box-shadow: 0 30px 90px rgba(24, 14, 53, .28), 0 0 0 1px rgba(255,255,255,.8) inset; }
@@ -145,23 +176,23 @@ body {
 .light .consultation-close { color: #665b7d; border-color: rgba(68,51,101,.12); background: rgba(68,51,101,.04); }
 .consultation-step { display: inline-flex; align-items: center; gap: 7px; color: #bcb3d2; font: 700 10px/1 Lato, sans-serif; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
 .consultation-step i { display: block; width: 7px; height: 7px; border-radius: 50%; background: #15ddbb; box-shadow: 0 0 0 4px rgba(21,221,187,.12); }
-.consultation-heading { position: relative; z-index: 1; max-width: 480px; margin-bottom: 24px; }
+.consultation-heading { position: relative; z-index: 1; max-width: 450px; margin-bottom: 20px; }
 .consultation-kicker { display: block; margin-bottom: 11px; color: #45d8f0; font: 700 10px/1 Lato, sans-serif; letter-spacing: .16em; }
 .consultation-heading h2 {
   margin: 0;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  font-size: clamp(28px, 4.2vw, 38px);
+  font-size: clamp(28px, 4vw, 35px);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
   white-space: nowrap;
 }
 .consultation-heading h2 em { color: #a78bfa; font-style: normal; }
-.consultation-heading p { max-width: 430px; margin: 14px 0 0; color: #b5afc2; font-family: Lato, sans-serif; font-size: 14px; line-height: 1.55; }
-.consultation-form { position: relative; z-index: 1; display: grid; gap: 16px; padding: 21px; border: 1px solid rgba(255,255,255,.075); border-radius: 18px; background: rgba(255,255,255,.028); backdrop-filter: blur(8px); }
-.consultation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 12px; }
-.consultation-field { display: grid; gap: 7px; color: #e7e2f2; font: 700 12px/1.2 Lato, sans-serif; letter-spacing: .025em; }
+.consultation-heading p { max-width: 430px; margin: 11px 0 0; color: #b5afc2; font-family: Lato, sans-serif; font-size: 14px; line-height: 1.5; }
+.consultation-form { position: relative; z-index: 1; display: grid; gap: 13px; padding: 18px; border: 1px solid rgba(255,255,255,.075); border-radius: 18px; background: rgba(255,255,255,.028); backdrop-filter: blur(8px); }
+.consultation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 10px; }
+.consultation-field { display: grid; gap: 6px; color: #e7e2f2; font: 700 12px/1.2 Lato, sans-serif; letter-spacing: .025em; }
 .consultation-field b { color: #e54755; }
 .consultation-field input, .consultation-field select, .consultation-field textarea {
   width: 100%;
@@ -169,7 +200,7 @@ body {
   border: 1px solid rgba(195, 184, 227, .25);
   border-radius: 9px;
   outline: none;
-  padding: 12px 14px;
+  padding: 10px 12px;
   color: #f5f3ff;
   background: rgba(255,255,255,.065);
   font: 400 16px Lato, sans-serif;
@@ -184,20 +215,20 @@ body {
 .consultation-field input::placeholder, .consultation-field textarea::placeholder { color: #918aa3; }
 .consultation-field input:focus, .consultation-field select:focus, .consultation-field textarea:focus { border-color: #8b6cf6; box-shadow: 0 0 0 3px rgba(131,86,251,.2); }
 .consultation-select-wrap { position: relative; }
-.consultation-select-trigger { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 47px; border: 1px solid rgba(195,184,227,.25); border-radius: 9px; padding: 12px 14px; color: #a59caf; background: rgba(255,255,255,.065); text-align: left; font: 500 16px Lato, sans-serif; cursor: pointer; }
+.consultation-select-trigger { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 43px; border: 1px solid rgba(195,184,227,.25); border-radius: 9px; padding: 10px 12px; color: #a59caf; background: rgba(255,255,255,.065); text-align: left; font: 500 16px Lato, sans-serif; cursor: pointer; }
 .consultation-select-trigger.is-selected { color: #fff; font-weight: 600; }
 .consultation-select-trigger:focus-visible { outline: none; border-color: #8b6cf6; box-shadow: 0 0 0 3px rgba(131,86,251,.2); }
 .consultation-select-trigger i { width: 8px; height: 8px; margin-right: 3px; border-right: 1.5px solid #c9c1dc; border-bottom: 1.5px solid #c9c1dc; transform: rotate(45deg) translateY(-2px); }
 .consultation-select-menu { position: absolute; z-index: 10; top: calc(100% + 7px); right: 0; left: 0; max-height: 205px; overflow-y: auto; padding: 6px; border: 1px solid rgba(160,126,255,.45); border-radius: 11px; background: #211c31; box-shadow: 0 15px 30px rgba(0,0,0,.42); }
 .consultation-select-menu button { display: block; width: 100%; border: 0; border-radius: 7px; padding: 10px 11px; color: #f6f2ff; background: transparent; text-align: left; font: 600 14px Lato, sans-serif; cursor: pointer; }
 .consultation-select-menu button:hover, .consultation-select-menu button.is-selected { color: #fff; background: linear-gradient(90deg, rgba(131,86,251,.86), rgba(104,70,218,.7)); }
-.consultation-field textarea { min-height: 98px; }
-.consultation-submit, .consultation-success button { position: relative; overflow: hidden; border: 1px solid rgba(196, 180, 255, .35); border-radius: 10px; padding: 15px 24px; color: #fff; background: linear-gradient(105deg, #6d43dc, #8356fb 54%, #9a78ff); box-shadow: 0 10px 22px rgba(104,72,224,.34), 0 0 22px rgba(131,86,251,.16); font: 700 15px Lato, sans-serif; cursor: pointer; }
+.consultation-field textarea { min-height: 84px; }
+.consultation-submit, .consultation-success button { position: relative; overflow: hidden; border: 1px solid rgba(196, 180, 255, .35); border-radius: 10px; padding: 13px 22px; color: #fff; background: linear-gradient(105deg, #6d43dc, #8356fb 54%, #9a78ff); box-shadow: 0 10px 22px rgba(104,72,224,.34), 0 0 22px rgba(131,86,251,.16); font: 700 15px Lato, sans-serif; cursor: pointer; }
 .consultation-submit::after { content: '→'; position: absolute; margin-left: 10px; transition: transform .2s ease; }
 .consultation-submit:hover::after { transform: translateX(4px); }
 .consultation-submit:hover, .consultation-success button:hover { filter: brightness(1.05); }
 .consultation-submit:disabled { cursor: wait; opacity: .7; }
-.consultation-safe { position: relative; z-index: 1; margin: 16px 0 0; color: #918aa3; text-align: left; font: 12px Lato, sans-serif; }
+.consultation-safe { position: relative; z-index: 1; margin: 13px 0 0; color: #918aa3; text-align: left; font: 12px Lato, sans-serif; }
 .consultation-error { margin: -7px 0 0; color: #c53030; font: 14px Lato, sans-serif; }
 .consultation-success { padding: 38px 18px 24px; text-align: center; font-family: Lato, sans-serif; }
 .consultation-success span { display: grid; place-items: center; width: 56px; height: 56px; margin: 0 auto 14px; border-radius: 50%; color: white; background: #1cb7d9; font-size: 33px; }
@@ -593,4 +624,38 @@ html:has(.intro-overlay) {
 
 .animate-scroll-left:hover {
   animation-play-state: paused;
+}
+
+/* Responsive safety layer: shared by the homepage, listing pages and detail
+   templates so narrow phones and tablets never create horizontal page scroll. */
+img, svg, video, canvas { max-width: 100%; }
+
+table { max-width: 100%; }
+pre, code { overflow-wrap: anywhere; }
+
+@media (max-width: 1023px) {
+  html, body { max-width: 100%; overflow-x: clip; }
+
+  .spotlight-line { min-width: 0; }
+  .prose { overflow-wrap: anywhere; word-break: normal; }
+  .prose pre { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .prose table { min-width: 620px; }
+  .prose :where(img, iframe, video) { width: 100%; height: auto; }
+
+  /* Keep visual cards fluid when tablet layouts change from columns to rows. */
+  .PostCard, .sl-serviceCard, .sl-product-grid > *, .sl-pf-card { min-width: 0; }
+}
+
+@media (max-width: 639px) {
+  button, a, input, select, textarea { touch-action: manipulation; }
+
+  .prose { font-size: 1rem; line-height: 1.7; }
+  .prose h2 { font-size: 1.55rem; line-height: 1.18; }
+  .prose h3 { font-size: 1.28rem; line-height: 1.25; }
+
+  /* Tables retain their columns but scroll inside their own card, not the page. */
+  .prose > div:has(table) { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  .about-growth-visual strong { max-width: 100%; }
+  .about-industry-grid div, .about-values-grid article, .about-capability-grid article { min-width: 0; }
 }
