@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function BuildTogetherCTA() {
   return (
-    <section aria-label="Grocery Platform CTA" className="w-full flex justify-center xxxs:my-14 sm:my-16 lg:my-20">
+    <section aria-label="Grocery Platform CTA" className="w-full flex justify-center xxxs:my-10 sm:my-12 lg:my-14">
       <div className="w-10/12 xxxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px]">
         <div className="scroll-reveal border border-border bg-cardBg w-full rounded-[28px] sm:rounded-[36px] lg:rounded-[40px] overflow-hidden relative min-h-[380px] sm:min-h-[460px] md:min-h-[520px] flex items-center justify-center p-6 sm:p-12 md:p-16 text-center shadow-2xl">
           {/* Background Image */}

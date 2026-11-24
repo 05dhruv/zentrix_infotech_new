@@ -17,7 +17,7 @@ const sliderImages = [
 
 export default function TopProjectsSlider() {
   return (
-    <div className="imgSlider-4 w-full flex justify-center items-center mt-20 mb-12 sm:mt-24 sm:mb-16 md:mt-28 md:mb-20 lg:mt-28 lg:mb-20 xl:mt-32 xl:mb-24 overflow-x-hidden">
+    <div className="imgSlider-4 w-full flex justify-center items-center mt-16 mb-10 sm:mt-20 sm:mb-12 md:mt-24 md:mb-16 lg:mt-24 lg:mb-16 xl:mt-28 xl:mb-20 overflow-x-hidden">
       <div className="w-full overflow-hidden mask-gradient-x py-2 flex select-none">
         {/* Infinite Loop Track (duplicated twice for seamless animation) */}
         <div className="flex shrink-0 items-center animate-marquee-left gap-4 pr-4 sm:gap-6 sm:pr-6 xl:gap-8 xl:pr-8">
